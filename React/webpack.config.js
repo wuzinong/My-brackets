@@ -2,20 +2,21 @@ const path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    devtool:'cheap-module-eval-source-map',
+    devtool:false,
     entry:[
         './src/index.js'
     ],
     output:{
-        path:path.resolve(__dirname,'/dist/'),
+        path:path.join(__dirname,'/dist/'),
         filename:"bundle.js",
-        publicPath:'/'
+        chunkFilename: '[name]-[hash:5].chunk.js',
+        publicPath:'./'
     },
     plugins:[
         new HtmlWebpackPlugin({
-            template:'index.html',
-            filename:'./index.html',
-            inject:true
+            template:'./index.html',
+            filename:'index.html',
+            inject:'body'
         })
     ],
     module:{
