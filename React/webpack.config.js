@@ -1,8 +1,11 @@
 const path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-module.exports = {
+const isDev = process.env.NODE_ENV === 'development';
+
+const config = {
     devtool:"cheap-module-eval-source-map",
+    target:'web',
     entry:[
         'webpack-dev-server/client?http://127.0.0.1:3000',
         'webpack/hot/only-dev-server',
@@ -66,4 +69,17 @@ module.exports = {
         //     'my-libs':resolve(__dirname,'./src/libs/lib.js')
         // }
     }
-};
+}
+if(isDev){
+    config.devServer = {
+        port:'3000',
+        host:'127.0.0.1',
+        overlay:{
+            errors:true
+        }
+    }
+}
+
+module.exports = config;
+
+
