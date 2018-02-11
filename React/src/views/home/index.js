@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import './home.scss';
+import '../../assets/images/person.png';
 
 class Home extends Component{
     constructor(props){

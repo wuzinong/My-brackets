@@ -12,7 +12,7 @@ module.exports = {
         path:path.join(__dirname,'/dist/'),
         filename:"bundle.js",
         chunkFilename: '[name]-[hash:5].chunk.js',
-        publicPath: "/",
+        publicPath: "./",
     },
     plugins:[
         new webpack.HotModuleReplacementPlugin(),
@@ -44,7 +44,19 @@ module.exports = {
                 "postcss-loader",
                 "sass-loader"
             ]
-          }
+          },{
+			test: /\.(jpe?g|png|gif|svg)$/i,
+			include: /src/,
+			use: [
+                {
+                    loader:'url-loader',
+                    options:{
+                        limit:1024,
+                        name:'[name].[ext]'
+                    }
+                }
+			]
+		 }
         ]
     },
     resolve:{
