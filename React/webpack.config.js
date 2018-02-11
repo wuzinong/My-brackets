@@ -78,6 +78,7 @@ if(isDev){
             errors:true
         }
     }
+    config.output.publicPath = "/";
 }
 
 module.exports = config;
