@@ -2,17 +2,20 @@ const path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    devtool:false,
+    devtool:"cheap-module-eval-source-map",
     entry:[
-        './src/index.js'
+        'webpack-dev-server/client?http://127.0.0.1:3000',
+        'webpack/hot/only-dev-server',
+        './src/index.jsx'
     ],
     output:{
         path:path.join(__dirname,'/dist/'),
         filename:"bundle.js",
         chunkFilename: '[name]-[hash:5].chunk.js',
-        publicPath:'./'
+        publicPath: "/",
     },
     plugins:[
+        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template:'./index.html',
             filename:'index.html',
@@ -21,12 +24,34 @@ module.exports = {
     ],
     module:{
         rules:[{
-            test:/\.(js|jsx)$/,
+            test:/\.jsx?$/,
             include:/src/,
             use:[
-                "babel-loader"
+               {
+               loader:"babel-loader"
+             }
+            ]
+          },{
+            test:/.scss$/,
+            use:[
+                "style-loader",
+                {
+                  loader:"css-loader",
+                  options:{
+                      minimize:true
+                  }
+                },
+                "postcss-loader",
+                "sass-loader"
             ]
           }
-        ],
+        ]
+    },
+    resolve:{
+        extensions:['.js','.jsx','.json'],
+        //modules:['node_modules'],
+        // alias:{
+        //     'my-libs':resolve(__dirname,'./src/libs/lib.js')
+        // }
     }
 };
