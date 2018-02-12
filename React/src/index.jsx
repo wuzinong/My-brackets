@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './views/home/index.js';
+import App from './router/index.js';
 
 if(process.env.NODE_ENV==='development'){
-    ReactDOM.render(<Home/>,document.getElementById("container"));
+    ReactDOM.render(<App/>,document.getElementById("container"));
 }else{
-    ReactDOM.render(<Home/>,document.getElementById("container"));
+    ReactDOM.render(<App/>,document.getElementById("container"));
 }

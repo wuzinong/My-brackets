@@ -3,6 +3,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 
+console.log(process.env.NODE_ENV);
+
 const config = {
     devtool:"cheap-module-eval-source-map",
     target:'web',
@@ -15,7 +17,7 @@ const config = {
     ],
     output:{
         path:path.join(__dirname,'/dist/'),
-        filename:"bundle.js",
+        filename:"[name].bundle.js",
         chunkFilename: '[name]-[hash:5].chunk.js',
         publicPath: "./",
     },
@@ -26,7 +28,15 @@ const config = {
             template:'./index.html',
             filename:'index.html',
             inject:'body'
-        })
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+                 name: 'commonFile' // Specify the common bundle's name.
+        }),
+        new webpack.DefinePlugin({
+			'process.env': {
+				'NODE_ENV': JSON.stringify('development')
+			}
+		})
     ],
     module:{
         rules:[{
