@@ -3,9 +3,11 @@ import {BrowserRouter,Route,Switch,Link,index} from 'react-router-dom';
 
 import Home from '../views/home/index.js';
 
- import About from '../views/about/index.js';
-
-
+import About from '../views/about/index.js';
+// let About = null;
+// import('../views/home/index.js').then((module)=>{
+//     About = module;
+// });
 
 const App =()=>(
         <BrowserRouter>

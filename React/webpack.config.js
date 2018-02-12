@@ -1,6 +1,8 @@
 const path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 const isDev = process.env.NODE_ENV === 'development';
 
 console.log(process.env.NODE_ENV);
@@ -18,7 +20,7 @@ const config = {
     output:{
         path:path.join(__dirname,'/dist/'),
         filename:"[name].bundle.js",
-        chunkFilename: '[name]-[hash:5].chunk.js',
+        chunkFilename: '[name]-[hash:5].chunk.js', // for dynamic loading
         publicPath: "./",
     },
     plugins:[
@@ -28,6 +30,11 @@ const config = {
             template:'./index.html',
             filename:'index.html',
             inject:'body'
+        }),
+        new ExtractTextPlugin({
+            filename: 'bundle-[hash:5].css',
+            disable: false,
+            allChunks: true
         }),
         new webpack.optimize.CommonsChunkPlugin({
                  name: 'commonFile' // Specify the common bundle's name.
@@ -105,6 +112,47 @@ if(isDev){
         }
     }
     config.output.publicPath = "/";
+}else{
+    config.module = {
+        rules:[{
+            test:/\.jsx?$/,
+            include:/src/,
+            use:[
+               {
+               loader:"babel-loader"
+             }
+            ]
+          },{
+            test:/.scss$/,
+            use:ExtractTextPlugin.extract({
+                fallback:"style-loader",
+                use:[{
+                  loader:"css-loader",
+                  options:{
+                      minimize:true,
+                      modules: true, //enable css modules
+                      importLoaders: 2
+                  }
+                },
+                "postcss-loader",
+                "sass-loader"
+               ]
+            })
+          },{
+			test: /\.(jpe?g|png|gif|svg)$/i,
+			include: /src/,
+			use: [
+                {
+                    loader:'url-loader',
+                    options:{
+                        limit:1024,
+                        name:'[name].[ext]'
+                    }
+                }
+			]
+		 }
+        ]
+    }
 }
 
 module.exports = config;

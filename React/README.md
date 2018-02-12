@@ -1,6 +1,8 @@
 Plugings/Tools used:
 yarn ：https://yarn.bootcss.com/docs/cli/
 
+extract-text-webpack-plugin: https://webpack.js.org/plugins/extract-text-webpack-plugin/ (Extract text from a bundle, or bundles, into a separate file.)
+
 css/html:
 
 style-loader:https://github.com/webpack-contrib/style-loader
@@ -23,3 +25,6 @@ Libs:
 
 React:https://github.com/facebook/react
   react-hot-loader:https://github.com/gaearon/react-hot-loader
+
+
+  
