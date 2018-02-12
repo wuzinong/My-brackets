@@ -7,8 +7,10 @@ const config = {
     devtool:"cheap-module-eval-source-map",
     target:'web',
     entry:[
+        'react-hot-loader/patch',
         'webpack-dev-server/client?http://127.0.0.1:3000',
         'webpack/hot/only-dev-server',
+		'babel-polyfill',
         './src/index.jsx'
     ],
     output:{
@@ -18,6 +20,7 @@ const config = {
         publicPath: "./",
     },
     plugins:[
+        new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template:'./index.html',
@@ -41,7 +44,9 @@ const config = {
                 {
                   loader:"css-loader",
                   options:{
-                      minimize:true
+                      minimize:true,
+                      modules: true, //enable css modules
+                      importLoaders: 2
                   }
                 },
                 "postcss-loader",
@@ -73,9 +78,20 @@ const config = {
 if(isDev){
     config.devServer = {
         port:'3000',
-        host:'127.0.0.1',
+        host:'0.0.0.0',
+        hot:true,
+        inline:true,
+        historyApiFallback:true,
         overlay:{
             errors:true
+        },
+        stats: {
+            colors: true,
+            hash: false,
+            timings: true,
+            chunks: false,
+            chunkModules: false,
+            modules: false
         }
     }
     config.output.publicPath = "/";

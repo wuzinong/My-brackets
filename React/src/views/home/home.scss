@@ -2,3 +2,15 @@ body{
   color:red;
   display: flex;
 }
+
+:local(.test){
+  border:1px solid pink;
+  color:pink;
+}
+:global(#container){
+  width: 100%;
+  text-align: center;
+  button{
+    margin:0 auto;
+  }
+}

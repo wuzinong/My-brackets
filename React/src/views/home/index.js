@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import './home.scss';
+import homeStyle from'./home.scss';
 import '../../assets/images/person.png';
 
 class Home extends Component{
@@ -7,7 +7,9 @@ class Home extends Component{
         super(props);
     }
     render(){
-        return <div>a</div>;
+        return <div className={homeStyle.test}>
+           <button>Go to About</button>
+        </div>;
     }
 }
 export default Home;
