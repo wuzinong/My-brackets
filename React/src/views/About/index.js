@@ -10,7 +10,7 @@ class About extends Component{
         return (
           <div className={style.des}>
              <p>This is about page</p>
-             <Link to="/home">return to home</Link>
+             <Link to="/">return to home</Link>
           </div>
         )
     }
