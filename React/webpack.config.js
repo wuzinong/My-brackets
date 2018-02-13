@@ -53,11 +53,6 @@ const config = {
     ],
     module:{
         rules:[
-            // {
-            //     test:/.*/,
-            //     include:[path.resolve(__dirname,'./src/views/about')],
-            //     loader:'bundle-loader?lazy&name=About-CCC'
-            // },
             {
             test:/\.jsx?$/,
             include:/src/,
