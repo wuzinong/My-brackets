@@ -14,7 +14,7 @@ const config = {
         'react-hot-loader/patch',
         'webpack-dev-server/client?http://127.0.0.1:3000',
         'webpack/hot/only-dev-server',
-		'babel-polyfill',
+        'babel-polyfill',
         './src/index.js'
     ],
     output:{
@@ -36,8 +36,14 @@ const config = {
             disable: false,
             allChunks: true
         }),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //          name: 'commonFile', // Specify the common bundle's name.
+        //          //filename:'my-fileName.js' //自己取个特别的名字
+        // }),
         new webpack.optimize.CommonsChunkPlugin({
-                 name: 'commonFile' // Specify the common bundle's name.
+                 name: 'vendor',
+                 //filename:'my-vendor.js'
+                 minChunks:Infinity
         }),
         new webpack.DefinePlugin({
 			'process.env': {
@@ -46,7 +52,13 @@ const config = {
 		})
     ],
     module:{
-        rules:[{
+        rules:[
+            // {
+            //     test:/.*/,
+            //     include:[path.resolve(__dirname,'./src/views/about')],
+            //     loader:'bundle-loader?lazy&name=About-CCC'
+            // },
+            {
             test:/\.jsx?$/,
             include:/src/,
             use:[
@@ -113,6 +125,11 @@ if(isDev){
     }
     config.output.publicPath = "/";
 }else{
+    config.devtool = false;
+    config.entry={
+        vendor:['babel-polyfill','react','react-dom','react-router'],
+        app:'./src/index.js'
+    };
     config.module = {
         rules:[{
             test:/\.jsx?$/,

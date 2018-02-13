@@ -15,11 +15,10 @@ if(process.env.NODE_ENV==='development'){
     render(App);
     if(module.hot){
         module.hot.accept(App,()=>{
-            console.log("===========================")
             render(App);
         });
     }
   
 }else{
-    ReactDOM.render(App,document.getElementById("container"));
+    ReactDOM.render(<App/>,document.getElementById("container"));
 }

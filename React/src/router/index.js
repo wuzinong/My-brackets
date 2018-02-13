@@ -1,35 +1,38 @@
 import React from 'react'; 
-import {BrowserRouter,Route,Switch,Link,index} from 'react-router-dom';
+import {HashRouter,BrowserRouter,Route,Switch,Link,index,Redirect} from 'react-router-dom';
  
 import Home from '../views/home/index.js';
-
-
-var load = require('promise?../views/about/index.js');
-
- //import About from '../views/about/index.js';
-// let About = null;
-// import('../views/home/index.js').then((module)=>{
-//     About = module;
-// });
-
-// const About = (location, callback) => {
-//     require.ensure([], function (require) {
-//         callback(null, require('../views/about/index.js').default);
-//     }, 'HomeContainer');
-// };
+import NotFound from '../views/notFound/index.js';
+//const About = require('bundle-loader?lazy&name=About-chunk!../views/about/index.js');
  
 
+
+import About from '../views/about/index.js';
+const isReactComponent = (obj) => Boolean(obj && obj.prototype && Boolean(obj.prototype.isReactComponent));
+const component = (component) => {
+    return isReactComponent(component)
+      ? {component}
+      : {getComponent: (loc, cb)=> component(
+           comp=> cb(null, comp.default || comp))}
+  };
+
+
 const App =()=>(
-        <BrowserRouter>
+        <HashRouter>
             <Switch>
                 <Route exact path="/" component={Home} />
                  
                 <Route path="/about" 
-                      component={()=>load().then(function(file){return file})}
+                      component={About}
                     >
                 </Route>
+                <Route path="/notFound"
+                      component = {NotFound}
+                    >
+                </Route>
+                <Redirect exact path='*' to='/notFound'></Redirect>
             </Switch>
-        </BrowserRouter>
+        </HashRouter>
 );
 
 export default App;
