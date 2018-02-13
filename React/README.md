@@ -3,7 +3,7 @@ yarn ：https://yarn.bootcss.com/docs/cli/
 
 extract-text-webpack-plugin: https://webpack.js.org/plugins/extract-text-webpack-plugin/ (Extract text from a bundle, or bundles, into a separate file.)
 
-bundle-loader:https://github.com/webpack-contrib/bundle-loader
+bundle-loader:https://github.com/webpack-contrib/bundle-loader (need to use and wait for investigation)
 
 css/html:
 
