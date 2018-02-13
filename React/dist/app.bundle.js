@@ -1,4 +1,4 @@
-webpackJsonp([1],{
+webpackJsonp([2],{
 
 /***/ "./node_modules/history/DOMUtils.js":
 /***/ (function(module, exports, __webpack_require__) {
@@ -1642,7 +1642,7 @@ if (true) {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _react = __webpack_require__("./node_modules/react/index.js");
@@ -1655,13 +1655,9 @@ var _AsuncComponents = __webpack_require__("./src/components/AsuncComponents.js"
 
 var _AsuncComponents2 = _interopRequireDefault(_AsuncComponents);
 
-var _index = __webpack_require__("./src/views/home/index.js");
+var _home = __webpack_require__("./src/views/home/index.js");
 
-var _index2 = _interopRequireDefault(_index);
-
-var _index3 = __webpack_require__("./src/views/notFound/index.js");
-
-var _index4 = _interopRequireDefault(_index3);
+var _home2 = _interopRequireDefault(_home);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1669,28 +1665,29 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 
 var About = (0, _AsuncComponents2.default)(function () {
-  return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, "./src/views/about/index.js"));
+    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, "./src/views/about/index.js"));
+});
+var NotFound = (0, _AsuncComponents2.default)(function () {
+    return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, "./src/views/notFound/index.js"));
 });
 
-console.log("sdfsdfsdf");
-console.log(About);
 var App = function App() {
-  return _react2.default.createElement(
-    _reactRouterDom.HashRouter,
-    null,
-    _react2.default.createElement(
-      _reactRouterDom.Switch,
-      null,
-      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _index2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/about',
-        component: About
-      }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/notFound',
-        component: _index4.default
-      }),
-      _react2.default.createElement(_reactRouterDom.Redirect, { exact: true, path: '*', to: '/notFound' })
-    )
-  );
+    return _react2.default.createElement(
+        _reactRouterDom.HashRouter,
+        null,
+        _react2.default.createElement(
+            _reactRouterDom.Switch,
+            null,
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _home2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/about',
+                component: About
+            }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/notFound',
+                component: NotFound
+            }),
+            _react2.default.createElement(_reactRouterDom.Redirect, { exact: true, path: '*', to: '/notFound' })
+        )
+    );
 };
 
 exports.default = App;
@@ -1776,57 +1773,6 @@ var Home = function (_Component) {
 }(_react.Component);
 
 exports.default = Home;
-
-/***/ }),
-
-/***/ "./src/views/notFound/index.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__("./node_modules/react/index.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var NotFound = function (_Component) {
-    _inherits(NotFound, _Component);
-
-    function NotFound(props) {
-        _classCallCheck(this, NotFound);
-
-        return _possibleConstructorReturn(this, (NotFound.__proto__ || Object.getPrototypeOf(NotFound)).call(this, props));
-    }
-
-    _createClass(NotFound, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                null,
-                'Sorry , page not found'
-            );
-        }
-    }]);
-
-    return NotFound;
-}(_react.Component);
-
-exports.default = NotFound;
 
 /***/ })
 

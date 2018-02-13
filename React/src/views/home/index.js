@@ -1,23 +1,23 @@
-import React,{Component} from 'react';
-import {Link,BrowserRouter} from 'react-router-dom';
-import homeStyle from'./home.scss';
-import '../../assets/images/person.png';
+import React from 'react';
+import {connect} from 'react-redux';
+import HomeComponent from './home-component.js';
 
-class Home extends Component{
-    constructor(props){
-        super(props);
-    }
-    handleClick(name){
-        
-        console.log(this.props.history); 
-        this.props.history.push("/about");
-    }
-    render(){
-        return ( 
-          <div className={homeStyle.test}>
-           <button onClick={()=>{this.handleClick("/about")}}>Go to About</button> 
-          </div> 
-        )
+const mapDispatchToProps = (dispatch,props)=>{
+    return {
+       handleClick(){
+          props.history.push("/about");
+       }
     }
 }
+
+const mapStateToProps=(state)=>{
+     return {
+        ...state.HomeReducer
+     }
+}
+
+const Home = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(HomeComponent)
 export default Home;

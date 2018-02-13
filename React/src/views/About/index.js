@@ -1,19 +1,23 @@
-import React,{Component} from 'react';
-import style from './about.scss';
-import {Link} from 'react-router-dom';
+import React from 'react';
+import {connect} from 'react-redux';
+import AboutComponent from './about-component.js';
 
-class About extends Component{
-    constructor(props){
-        super(props)
-    }
-    render(){
-        return (
-          <div className={style.des}>
-             <p>This is about page</p>
-             <Link to="/">return to home</Link>
-          </div>
-        )
+const mapDispatchToProps = (dispatch,props)=>{
+    return {
+       handleClick(){
+          props.history.push("/about");
+       }
     }
 }
 
+const mapStateToProps=(state)=>{
+     return {
+        ...state.AboutReducer
+     }
+}
+
+const About = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(AboutComponent)
 export default About;
