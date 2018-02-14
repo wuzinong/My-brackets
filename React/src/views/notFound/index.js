@@ -1,13 +1,18 @@
-import React,{Component} from 'react';
+import {connect} from 'react-redux';
+import NotFoundComponent from './notFound-component';
 
-class NotFound extends Component{
-    constructor(props){
-        super(props);
-    }
-    render(){
-        return <div>
-           Sorry , page not found
-        </div>
+const mapDispatchToProps = (dispatch)=>{
+    return {
+
     }
 }
+
+const mapStateToProps = (state)=>{
+
+}
+const NotFound = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(NotFoundComponent)
+
 export default NotFound;

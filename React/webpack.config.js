@@ -32,7 +32,7 @@ const config = {
             inject:'body'
         }),
         new ExtractTextPlugin({
-            filename: 'bundle-[hash:5].css',
+            filename: 'bundle.css',
             disable: false,
             allChunks: true
         }),
@@ -93,10 +93,10 @@ const config = {
     },
     resolve:{
         extensions:['.js','.jsx','.json'],
-        //modules:['node_modules'],
-        // alias:{
-        //     'my-libs':resolve(__dirname,'./src/libs/lib.js')
-        // }
+        modules:['node_modules'],
+        alias:{
+             'bootstrap':resolve(__dirname,'node_modules/bootstrap')
+        }
     }
 }
 if(isDev){
@@ -164,7 +164,61 @@ if(isDev){
 			]
          }
         ]
-    }
+    };
+
+    config.plugins=[
+        new webpack.LoaderOptionsPlugin({
+            minimize: true,
+            debug: false
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            beautify: false,
+            mangle: {
+                screw_ie8: true,
+                keep_fnames: true
+            },
+            compress: {
+                screw_ie8: true
+            },
+            comments: false
+        }),
+        new HtmlWebpackPlugin({
+            template:'./index.html',
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeRedundantAttributes: true,
+                useShortDoctype: true,
+                removeEmptyAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                keepClosingSlash: true,
+                minifyJS: true,
+                minifyCSS: true,
+                minifyURLs: true
+            },
+            filename:'index.html',
+            inject:'body'
+        }),
+        new ExtractTextPlugin({
+            filename: 'bundle.css',
+            disable: false,
+            allChunks: true
+        }),
+        // new webpack.ProvidePlugin({
+        //     'Promise':'es6-promise',
+        //     'fetch': 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
+        // }),
+        new webpack.optimize.CommonsChunkPlugin({
+                 name: 'vendor',
+                 //filename:'my-vendor.js'
+                 minChunks:Infinity
+        }),
+        new webpack.DefinePlugin({
+			'process.env': {
+				'NODE_ENV': JSON.stringify('production')
+			}
+		})
+    ];
 }
 
 module.exports = config;

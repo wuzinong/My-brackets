@@ -1,6 +1,6 @@
 import React from 'react'; 
 import {HashRouter,BrowserRouter,Router,Route,Switch,Link,index,Redirect} from 'react-router-dom';
-import asyncComponent from '../components/AsuncComponents';
+import asyncComponent from '../libs/AsuncComponents';
 import Home from '../views/home'; 
 //const About = require('bundle-loader?lazy&name=About-chunk!../views/about/index.js');
 import {Provider} from 'react-redux';
