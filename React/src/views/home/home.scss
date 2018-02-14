@@ -1,17 +1,19 @@
-body{
-  color:red;
-  display: flex;
-}
 
-:local(.test){
-  border:1px solid pink;
-  color:pink;
-}
-:global(html){
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  button{
-    margin:0 auto;
-  }
+// :local(.test){
+//   border:1px solid pink;
+//   color:pink;
+// }
+// :global(body){
+//   button{
+//     margin:0 auto;
+//   }
+// }
+
+:local(.whole){
+   width:100%;
+   margin-top:100px;
+   button{
+     width:200px;
+     margin:0 auto;
+   }
 }

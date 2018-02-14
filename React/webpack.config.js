@@ -93,10 +93,10 @@ const config = {
     },
     resolve:{
         extensions:['.js','.jsx','.json'],
-        modules:['node_modules'],
-        alias:{
-             'bootstrap':resolve(__dirname,'node_modules/bootstrap')
-        }
+        // modules:['node_modules'],
+        // alias: {
+		// 	'my-lib': path.resolve(__dirname, './src/libs')
+		// }
     }
 }
 if(isDev){
