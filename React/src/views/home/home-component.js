@@ -16,11 +16,15 @@ class Home extends Component{
             showDyy:true
         });
     }
+    close(){
+        console.log("dddd");
+        this.setState({showDyy:false});
+    }
     render(){ 
         const {
             handleClick
         } = this.props;
-        var dyy = this.state.showDyy? <Dialogue info="test info"/>:null;
+        var dyy = this.state.showDyy? <Dialogue info="test info" close={()=>{this.close()}}/>:null;
         return ( 
           <div className={homeStyle.whole}>
             <p>A test frame for react practicing</p>

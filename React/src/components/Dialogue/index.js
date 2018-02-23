@@ -5,12 +5,10 @@ class Dialogue extends Component{
         super(props);
     }
     render(){
-        const{
-           info
-        } = this.props;
+
         return (
             <div>
-               <div className={dialogueStyle.bak}></div>
+               <div onClick ={this.props.close} className={dialogueStyle.bak}></div>
                <div className={dialogueStyle.content}>
                    {this.props.info}
                </div>
