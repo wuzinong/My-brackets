@@ -2,12 +2,18 @@ import React from 'react';
 import {HashRouter,BrowserRouter,Router,Route,Switch,Link,index,Redirect} from 'react-router-dom';
 import asyncComponent from '../libs/AsuncComponents';
 import Home from '../views/home'; 
-//const About = require('bundle-loader?lazy&name=About-chunk!../views/about/index.js');
+
 import {Provider} from 'react-redux';
 import store from '../store';
 
-const About = asyncComponent(()=>import('../views/about'));
-const NotFound = asyncComponent(()=>import('../views/notFound'));
+
+//If use dynamic load , the hot relacement function will not work. to be investigated
+// const About = asyncComponent(()=>import('../views/about'));
+// const NotFound = asyncComponent(()=>import('../views/notFound'));
+// const List = asyncComponent(()=>import('../views/list'));
+import About from '../views/about';
+import NotFound from '../views/notFound';
+import List from '../views/List';
 
 const App =()=>(
       <Provider store={store}>
@@ -17,6 +23,10 @@ const App =()=>(
                  
                 <Route path="/about" 
                        component = {About}
+                    >
+                </Route>
+                <Route path="/list" 
+                       component = {List}
                     >
                 </Route>
                 <Route path="/notFound"

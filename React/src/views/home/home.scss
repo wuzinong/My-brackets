@@ -12,8 +12,7 @@
 :local(.whole){
    width:100%;
    margin-top:100px;
-   button{
-     width:200px;
-     margin:0 auto;
-   }
+   .btn{
+    display: block;
+  }
 }

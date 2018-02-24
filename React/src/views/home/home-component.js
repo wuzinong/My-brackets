@@ -29,9 +29,10 @@ class Home extends Component{
           <div className={homeStyle.whole}>
             <p>A test frame for react practicing</p>
             <h3>Effects</h3>
-            <button onClick={()=>{this.openDialogue()}}>Dialogue</button>
+            <a href="javascript:void(0)" className={homeStyle.btn} onClick={()=>{this.openDialogue()}}>Dialogue</a>
             <h3>Pages:</h3>
-            <button onClick={handleClick}>Go to About</button> 
+            <a href="javascript:void(0)" className={homeStyle.btn} onClick={handleClick}>Go to About</a> 
+            <Link className={homeStyle.btn} to='/list'>Go to List</Link> 
             {dyy}
           </div> 
         )
