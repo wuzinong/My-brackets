@@ -1,0 +1,12 @@
+{
+  "name": "testdb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Bran",
+  "license": "MIT",
+  "scripts":{
+      "create":"swagger project create test-data",
+      "start":"swagger project start test-data",
+      "edit":"swagger project edit test-data"
+    }
+}
