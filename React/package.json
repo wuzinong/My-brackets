@@ -7,10 +7,11 @@
   "scripts": {
     "start": "node server.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js --progress --profile --colors",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js --progress --profile --colors"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js --profile --colors"
   },
   "dependencies": {
     "autoprefixer": "^7.2.6",
+    "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
