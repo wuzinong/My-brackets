@@ -1,13 +1,25 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {getData,filterData} from '../../reducers/list-reducer';
 import ListComponent from './list-component';
 
 const mapDispatchToProps = (dispatch,props)=>{
-    return {}
+    const initList = ()=>{
+        dispatch(getData());
+    }
+    const filterList = (name)=>{
+        dispatch(filterData(name));
+    }
+    
+    return {
+        initList,
+        filterList
+    }
 }
 const mapStateToProps = (state)=>{
+    const {listData} = state.ListReducer;
     return {
-
+        listData:listData
     }
 }
 

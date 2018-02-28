@@ -8,35 +8,36 @@ class List extends Component{
     constructor(props){
         super(props);
         this.state={
-            searchValue:"test",
             listData:[],
             listComponent:null
         };
     }
     search(){ 
         let value = this.searchInput.value;
-        let arr = this.state.listData.filter(item=>item.indexOf(value)>=0);
-        this.setState({
-            listComponent:<ListComponent listData={arr}/>
-        });
+
+        const {filterList} = this.props;
+        filterList(value);
     }
     componentDidMount(){
-        axios.get("http://127.0.0.1:10010/data").then((response)=>{
-            this.setState({
-                listData:response.data,
-                listComponent:<ListComponent listData={response.data}/>
-            });
-        }); 
+        // axios.get("http://127.0.0.1:10010/data").then((response)=>{
+        //     this.setState({
+        //         listData:response.data,
+        //         listComponent:<ListComponent listData={response.data}/>
+        //     });
+        // }); 
+          const {initList} = this.props;
+        console.log(initList());
     }
     render(){ 
-        
+      
+        const {listData} = this.props;
+        console.log(listData);
         return <div className={listStyle.listContainer+" mylist"}>
            <header><Link to="/">back &gt;</Link>This is a test list</header>
            <div>
                <input ref={(value)=>this.searchInput = value} 
                       onKeyUp={()=>{this.search()}} type="text" placeholder="search ..."/></div>
-           {this.state.listComponent}
-                      
+               <ListComponent listData={listData}/> 
         </div>
     }
 }
