@@ -33,6 +33,7 @@ class Home extends Component{
             <h3>Pages:</h3>
             <a href="javascript:void(0)" className={homeStyle.btn} onClick={handleClick}>Go to About</a> 
             <Link className={homeStyle.btn} to='/list'>Go to List</Link> 
+            <Link className={homeStyle.btn} to='/imgUpload'>Go to ImgUpload</Link> 
             {dyy}
           </div> 
         )

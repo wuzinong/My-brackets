@@ -14,7 +14,7 @@ import store from '../store';
 import About from '../views/about';
 import NotFound from '../views/notFound';
 import List from '../views/List';
-
+import ImgUpload from '../views/imgUpload';
 const App =()=>(
       <Provider store={store}>
         <HashRouter>
@@ -27,6 +27,10 @@ const App =()=>(
                 </Route>
                 <Route path="/list" 
                        component = {List}
+                    >
+                </Route>
+                <Route path="/imgUpload" 
+                       component = {ImgUpload}
                     >
                 </Route>
                 <Route path="/notFound"

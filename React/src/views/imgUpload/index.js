@@ -1,6 +1,6 @@
 
 import {connect} from 'react-redux';
-import AboutComponent from './about-component.js';
+import ImgUploadComponent from './imgUpload-component';
 
 const mapDispatchToProps = (dispatch,props)=>{
     return {
@@ -12,12 +12,12 @@ const mapDispatchToProps = (dispatch,props)=>{
 
 const mapStateToProps=(state)=>{
      return {
-        ...state.AboutReducer
+         
      }
 }
 
-const About = connect(
+const ImgUpload = connect(
     mapStateToProps,
     mapDispatchToProps
-)(AboutComponent)
-export default About;
+)(ImgUploadComponent)
+export default ImgUpload;
