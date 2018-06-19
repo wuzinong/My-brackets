@@ -15,6 +15,7 @@ import About from '../views/about';
 import NotFound from '../views/notFound';
 import List from '../views/List';
 import ImgUpload from '../views/imgUpload';
+import SkeletonLoading from '../views/skeletonLoading';
 const App =()=>(
       <Provider store={store}>
         <HashRouter>
@@ -31,6 +32,10 @@ const App =()=>(
                 </Route>
                 <Route path="/imgUpload" 
                        component = {ImgUpload}
+                    >
+                </Route>
+                <Route path="/skeletonLoading" 
+                       component = {SkeletonLoading}
                     >
                 </Route>
                 <Route path="/notFound"
