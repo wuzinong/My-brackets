@@ -43,7 +43,7 @@ paths:
           schema:
             $ref: "#/definitions/ErrorResponse"
   
-  /data:
+  /api/data:
     x-swagger-router-controller: array_data
     get:
       description: Returns 'Hello' to the caller
