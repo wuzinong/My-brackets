@@ -36,7 +36,7 @@ const filterList = (name)=>({
 });
 
 const getData =()=> dispatch=>{
-     axios.get("http://127.0.0.1:10010/data").then((response)=>{
+     axios.get("/api/data").then((response)=>{
          dispatch(getList(response.data));
     });
     // const list = await axios.get("http://127.0.0.1:10010/data").then((response)=>{

@@ -116,7 +116,8 @@ if(isDev){
             chunks: false,
             chunkModules: false,
             modules: false
-        }
+        },
+        proxy: { "/api/**": { target: 'http://127.0.0.1:10010', secure: false }  }
     }
     config.output.publicPath = "/";
 }else{
