@@ -118,7 +118,7 @@ if(isDev){
             modules: false
         },
         proxy: { "/api/**": { target: 'http://127.0.0.1:10010', secure: false }  }
-    }
+    } 
     config.output.publicPath = "/";
 }else{
     config.devtool = false;
