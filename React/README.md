@@ -29,4 +29,6 @@ React:https://github.com/facebook/react
   react-hot-loader:https://github.com/gaearon/react-hot-loader
 
 
-  
+
+Or ref:
+http://www.css88.com/doc/typescript/doc/handbook/tutorials/React.html
