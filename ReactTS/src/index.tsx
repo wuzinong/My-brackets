@@ -2,8 +2,8 @@ import * as React from 'react';
 import * as ReactDOM  from 'react-dom';
 import {Provider} from 'react-redux';
 import configureStore from './store/configureStore';
-import Hello from './views/Hello';
-import {Home} from './views/home';
+import {Router,hashHistory} from 'react-router';
+import routes from './router/router'
 
 
 // ReactDOM.render(
@@ -14,7 +14,7 @@ import {Home} from './views/home';
 const store = configureStore();
 ReactDOM.render(
     <Provider store={store}>
-        <Hello name="123"/>
+      <Router history={hashHistory} routes={routes} />
     </Provider>,
-    document.getElementById("container")
-)
+    document.getElementById('container') as HTMLElement
+  );
