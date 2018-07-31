@@ -3,7 +3,7 @@ import * as actions from '../../actions/index';
 import {StoreState} from '../../types/index';
 import {connect,Dispatch} from 'react-redux';
 
-export function mapStateToProps({ enthusiasmLevel, languageName }: StoreState){
+export function mapStateToProps({demo:{enthusiasmLevel, languageName}}: StoreState){
     return {
         enthusiasmLevel,
         name:languageName
@@ -15,4 +15,9 @@ export function mapDispatchToProps(dispatch: Dispatch<actions.EnthusiasmAction>)
         onDecrement:()=>dispatch(actions.decrementEnthusiasm())
     }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(Hello);
+export function mergeProps(stateProps:Object,dispatchProps:Object,ownProps:Object){
+    // return Object.assign({},ownProps,stateProps,dispatchProps);
+    return {...ownProps,...stateProps,...dispatchProps};
+}
+
+export default connect(mapStateToProps,mapDispatchToProps,mergeProps)(Hello);

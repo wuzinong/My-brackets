@@ -14,7 +14,7 @@ import {Home} from './views/home';
 const store = configureStore();
 ReactDOM.render(
     <Provider store={store}>
-        <Hello/>
+        <Hello name="123"/>
     </Provider>,
     document.getElementById("container")
 )

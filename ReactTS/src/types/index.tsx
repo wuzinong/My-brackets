@@ -1,4 +1,7 @@
+export interface demo{
+    languageName:string;
+    enthusiasmLevel?:number;
+}
 export interface StoreState {
-    languageName: string;
-    enthusiasmLevel?: number;
+    demo?:demo
 }
