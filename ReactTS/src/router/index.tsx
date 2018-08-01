@@ -2,9 +2,17 @@ import * as React from 'react';
 import {HashRouter,BrowserRouter,Router,Route,Switch,Link,Redirect} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import configureStore from '../store/configureStore';
-import Hello from '../views/Hello';
-import Home from '../views/Home';
-import NotFound from '../views/NotFound';
+import asyncComponent from '../libs/AsyncComponents';
+
+
+// import Hello from '../views/Hello';
+// import Home from '../views/Home';
+// import NotFound from '../views/NotFound';
+
+const Hello = asyncComponent(()=>import('../views/Hello'));
+const Home = asyncComponent(()=>import('../views/Home'));
+const NotFound = asyncComponent(()=>import('../views/NotFound'));
+
 const store = configureStore();
 
 const App =()=>(

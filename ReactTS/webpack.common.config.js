@@ -1,11 +1,12 @@
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
-    mode:'development',
     entry: ["./src/index.tsx"],
     output: {
-        filename: "bundle.js",
+        filename:"[name].bundle.js",
         path: __dirname + "/dist",
+        chunkFilename: '[name].[chunkhash:22].js'
     },
 
     // Enable sourcemaps for debugging webpack's output.
@@ -20,11 +21,42 @@ module.exports = {
             template:'./index.html',
             filename:'index.html',
             inject:'body'
+        }),
+        new ExtractTextPlugin({
+            filename: 'bundle.css',
+            disable: false,
+            allChunks: true
         })
     ],
+    optimization:{
+        splitChunks:{
+            chunks: 'async',
+            minSize: 30000,
+            maxSize: 0,
+            minChunks: 1,
+            maxAsyncRequests: 5,
+            maxInitialRequests: 3,
+            automaticNameDelimiter: '~',
+            name: true,
+            cacheGroups: {
+              vendors: {
+                test: /[\\/]node_modules[\\/]/,
+                name:"vendors",
+                priority: -10,
+                chunks:"all"
+              },
+              default: {
+                minChunks: 2,
+                priority: -20,
+                reuseExistingChunk: true
+              }
+            }
+        }
+    },
     module: {
         rules: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+            // { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
             { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
 
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
