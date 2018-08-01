@@ -2,8 +2,7 @@ import * as React from 'react';
 import * as ReactDOM  from 'react-dom';
 import {Provider} from 'react-redux';
 import configureStore from './store/configureStore';
-import {Router,hashHistory} from 'react-router';
-import routes from './router/router'
+import App from './router/'
 
 
 // ReactDOM.render(
@@ -13,8 +12,6 @@ import routes from './router/router'
 
 const store = configureStore();
 ReactDOM.render(
-    <Provider store={store}>
-      <Router history={hashHistory} routes={routes} />
-    </Provider>,
+    <App/>,
     document.getElementById('container') as HTMLElement
   );
