@@ -9,9 +9,9 @@ import asyncComponent from '../libs/AsyncComponents';
 // import Home from '../views/Home';
 // import NotFound from '../views/NotFound';
 
-const Hello = asyncComponent(()=>import('../views/Hello'));
-const Home = asyncComponent(()=>import('../views/Home'));
-const NotFound = asyncComponent(()=>import('../views/NotFound'));
+const Hello = asyncComponent(()=>import('../views/Hello/index'));
+const Home = asyncComponent(()=>import('../views/Home/index'));
+const NotFound = asyncComponent(()=>import('../views/NotFound/index'));
 
 const store = configureStore();
 
