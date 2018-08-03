@@ -3,9 +3,9 @@ import {HashRouter,BrowserRouter,Router,Route,Switch,Link,Redirect} from 'react-
 import {Provider} from 'react-redux';
 import configureStore from '../redux/store/configureStore';
 import asyncComponent from '../libs/AsyncComponents';
-import Loadable from 'react-loadable';
+// import Loadable from 'react-loadable';
 
-import Loading from '../components/loading';
+// import Loading from '../components/loading';
 
 // import Hello from '../views/Hello';
 // import Home from '../views/Home';
@@ -32,7 +32,7 @@ const NotFound = asyncComponent(()=>import('../views/NotFound/index'));
 //     loader:()=>import('../views/NotFound/index'),
 //     loading:MyLoading
 //  });
-
+ 
 
 const store = configureStore();
 
