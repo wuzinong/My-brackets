@@ -1,9 +1,11 @@
 import * as React from 'react';
 import {HashRouter,BrowserRouter,Router,Route,Switch,Link,Redirect} from 'react-router-dom';
 import {Provider} from 'react-redux';
-import configureStore from '../store/configureStore';
+import configureStore from '../redux/store/configureStore';
 import asyncComponent from '../libs/AsyncComponents';
+import Loadable from 'react-loadable';
 
+import Loading from '../components/loading';
 
 // import Hello from '../views/Hello';
 // import Home from '../views/Home';
@@ -12,6 +14,25 @@ import asyncComponent from '../libs/AsyncComponents';
 const Hello = asyncComponent(()=>import('../views/Hello/index'));
 const Home = asyncComponent(()=>import('../views/Home/index'));
 const NotFound = asyncComponent(()=>import('../views/NotFound/index'));
+
+// function MyLoading(){
+//     return <div>Loading...</div>
+// }
+
+// const Hello = Loadable({
+//    loader:()=>import('../views/Hello/index'),
+//    loading:MyLoading
+// });
+
+// const Home = Loadable({
+//     loader:()=>import('../views/Home/index'),
+//     loading:MyLoading
+//  });
+//  const NotFound = Loadable({
+//     loader:()=>import('../views/NotFound/index'),
+//     loading:MyLoading
+//  });
+
 
 const store = configureStore();
 

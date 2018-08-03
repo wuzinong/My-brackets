@@ -4,7 +4,7 @@
         "sourceMap": true,// 使 TypeScript 生成 sourcemaps
         "noImplicitAny": true,
         "allowSyntheticDefaultImports":true,//允许使用import React from 'react'这种方式引入模块
-        "module":"commonjs", // esnext支持 lazyload
+        "module":"commonjs", // esnext 支持 lazyload  commonjs
         "target": "es5", // 编译成 es5
         "jsx":"react",
         "removeComments": false,
@@ -15,7 +15,7 @@
          "scripthost"   
         ],
         //"strict":true
-        //"baseUrl": "src", // 可以相对这个目录 import 文件
+        "baseUrl": "src", // 可以相对这个目录 import 文件
         //more:https://basarat.gitbooks.io/typescript/docs/options/noImplicitAny.html  
     },
     "include": [

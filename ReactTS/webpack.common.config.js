@@ -1,3 +1,5 @@
+const path = require('path');
+
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -6,7 +8,7 @@ module.exports = {
     output: {
         filename:"[name].bundle.js",
         path: __dirname + "/dist",
-        chunkFilename: '[name].[chunkhash:22].js'
+        chunkFilename: '[name].[chunkhash:5].js'
     },
 
     // Enable sourcemaps for debugging webpack's output.
@@ -40,10 +42,12 @@ module.exports = {
             name: true,
             cacheGroups: {
               vendors: {
-                test: /[\\/]node_modules[\\/]/,
+                // test: /[\\/]node_modules[\\/]/,
+                test:path.resolve(__dirname,'node_modules'),
                 name:"vendors",
                 priority: -10,
-                chunks:"all"
+                chunks:"initial",
+                enforce:true
               },
               default: {
                 minChunks: 2,
@@ -57,7 +61,7 @@ module.exports = {
         rules: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
             // { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-            { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+            { test: /\.tsx?$/, loader: "ts-loader" },
 
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }

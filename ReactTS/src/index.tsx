@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM  from 'react-dom';
-import configureStore from './store/configureStore';
-import App from './router/index';
+import configureStore from './redux/store/configureStore';
+import App from './router';
 
 
 // ReactDOM.render(

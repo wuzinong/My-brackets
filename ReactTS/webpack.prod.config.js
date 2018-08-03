@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 config.mode='production';
+config.devtool = false;
 config.entry = {
     vendor:['react','react-dom','react-router'],
     app:"./src/index.tsx"

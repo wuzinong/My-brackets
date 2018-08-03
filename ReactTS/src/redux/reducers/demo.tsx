@@ -1,6 +1,6 @@
 import {EnthusiasmAction} from '../actions';
-import {demo} from '../types/index';
-import {INCREMENT_ENTHUSIASM,DECREMENT_ENTHUSIASM} from '../constants/index';
+import {demo} from '../../types';
+import {INCREMENT_ENTHUSIASM,DECREMENT_ENTHUSIASM} from '../constants';
 import initState from '../store/initState';
 
 export function enthusiasm(state:demo=initState.demo,action:EnthusiasmAction):demo{
