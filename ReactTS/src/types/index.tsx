@@ -5,3 +5,9 @@ export interface demo{
 export interface StoreState {
     demo?:demo
 }
+
+//list
+export interface ListData{
+    listData:Array<string>;
+    listComponent:any
+} 

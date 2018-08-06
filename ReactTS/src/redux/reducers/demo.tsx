@@ -1,4 +1,4 @@
-import {EnthusiasmAction} from '../actions';
+import {EnthusiasmAction} from '../actions/index';
 import {demo} from '../../types';
 import {INCREMENT_ENTHUSIASM,DECREMENT_ENTHUSIASM} from '../constants';
 import initState from '../store/initState';

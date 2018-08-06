@@ -20,3 +20,24 @@ export function decrementEnthusiasm():DecrementEnthusiasm{
         type:constants.DECREMENT_ENTHUSIASM
     }
 }
+
+
+//List
+export interface GET_LIST{
+    type:constants.GET_LIST
+}
+export function getList():GET_LIST{
+    return {
+        type:constants.GET_LIST
+    }
+}
+
+export interface Filter_LIST{
+    type:constants.Filter_LIST
+}
+export function filterList():Filter_LIST{
+    return {
+        type:constants.Filter_LIST
+    }
+}
+export type ListAction = GET_LIST | Filter_LIST;

@@ -4,3 +4,9 @@ export type INCREMENT_ENTHUSIASM = typeof INCREMENT_ENTHUSIASM;
 
 export const DECREMENT_ENTHUSIASM = 'DECREMENT_ENTHUSIASM';
 export type DECREMENT_ENTHUSIASM = typeof DECREMENT_ENTHUSIASM;
+
+export const GET_LIST = "GET_LIST";
+export type GET_LIST = typeof GET_LIST;
+
+export const Filter_LIST = "Filter_LIST";
+export type Filter_LIST = typeof Filter_LIST;

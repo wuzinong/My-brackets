@@ -1,7 +1,7 @@
-import * as React from 'react';
-import HomeComponent from './homeComponent';
- 
+import {StoreState} from '../../types/index';
 import {connect,Dispatch} from 'react-redux';
+import AboutComponent from './aboutComponent';
+
 
 export function mapStateToProps(){
     return {
@@ -9,9 +9,6 @@ export function mapStateToProps(){
 }
 export function mapDispatchToProps(dispatch: Dispatch<Function>,props:any){
     return {
-        handleClick(){
-            props.history.push("/about");
-         }
     }
 }
 
@@ -21,4 +18,4 @@ export function mergeProps(stateProps:Object,dispatchProps:Object,ownProps:Objec
 
 
 
-export default connect(mapStateToProps,mapDispatchToProps,mergeProps)(HomeComponent);
+export default connect(mapStateToProps,mapDispatchToProps,mergeProps)(AboutComponent);

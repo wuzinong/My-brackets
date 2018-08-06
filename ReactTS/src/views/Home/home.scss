@@ -1,0 +1,13 @@
+.whole{
+    width:100%;
+    text-align: center;
+    .btn{
+     display: block;
+     padding:10px 0;
+   }
+}
+:global{
+  body{
+    background: rgba(0,0,0,.2)
+  }
+}
