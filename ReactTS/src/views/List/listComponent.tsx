@@ -1,18 +1,13 @@
 import React from 'react';
 import List from '../../components/List';
 import {Link} from 'react-router-dom'; 
+import {ListData} from '../../types/index'
 const classNames = require('./list.scss');
 
-export interface myState{
-    listData:Array<string>;
-    listComponent?:typeof List;
-}
 
-export interface myProps{
-    listData:Array<string>;
-} 
 
-export default class ListComponent extends React.Component<myProps,myState>{
+ 
+export default class ListComponent extends React.Component<ListData,ListData>{
     constructor(props:any){
         super(props);
         this.state={

@@ -9,5 +9,5 @@ export interface StoreState {
 //list
 export interface ListData{
     listData:Array<string>;
-    listComponent:any
+    listComponent?:any
 } 

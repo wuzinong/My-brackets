@@ -1,4 +1,4 @@
-import * as React from 'react';
+
 import HomeComponent from './homeComponent';
  
 import {connect,Dispatch} from 'react-redux';

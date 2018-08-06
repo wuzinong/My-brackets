@@ -1,9 +1,8 @@
 import React from 'react';
+import {ListData} from '../../types/index';
 
-export interface myPorps{
-    listData:Array<string>
-}
-export default class List extends React.Component<myPorps>{
+
+export default class List extends React.Component<ListData>{
     constructor(props:any){
         super(props);
     }
