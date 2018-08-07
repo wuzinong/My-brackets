@@ -9,5 +9,6 @@ export interface StoreState {
 //list
 export interface ListData{
     listData:string[];
-    listComponent?:any
+    listComponent?:any;
+    initList?:any;
 } 

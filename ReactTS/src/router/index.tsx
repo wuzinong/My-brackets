@@ -15,7 +15,7 @@ const Hello = asyncComponent(()=>import('../views/Hello'));
 const Home = asyncComponent(()=>import('../views/Home'));
 const NotFound = asyncComponent(()=>import('../views/NotFound'));
 const About = asyncComponent(()=>import('../views/About'));
-
+const List = asyncComponent(()=>import('../views/List'));
 // function MyLoading(){
 //     return <div>Loading...</div>
 // }
@@ -54,6 +54,10 @@ const App =()=>(
                     <Route path="/About"
                         component = {About}
                     ></Route>
+                    <Route path="/List"
+                        component = {List}
+                    >
+                    </Route>
                     <Redirect exact path='*' to='/NotFound'></Redirect>
             </Switch>
         </HashRouter>

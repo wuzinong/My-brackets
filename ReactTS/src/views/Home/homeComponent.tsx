@@ -39,6 +39,7 @@ class HomeComponent extends React.Component<MyProps,MyState>{
             <h3>Pages:</h3>
             <a href="javascript:void(0)" className={classNames.btn} onClick={handleClick}>About me</a> 
             <Link className={classNames.bt} to="/hello">Hello Demo</Link>
+            <Link className={classNames.btn} to='/list'>Go to List</Link>
             {dyy}
           </div> 
         )

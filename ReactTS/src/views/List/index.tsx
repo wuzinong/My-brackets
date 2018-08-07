@@ -2,15 +2,13 @@
 import {connect,Dispatch} from 'react-redux';
 import ListComponent from './listComponent';
 import * as actions from '../../redux/actions/index';
+import {ListData} from '../../types/index';
 
-export function mapStateToProps(dispatch: Dispatch<Function>){
-   
-    // const filterList = (name:string)=>{
-    //     dispatch(filterData(name));
-    // }
-
+export function mapStateToProps({listData,listComponent}:ListData){
+    
     return {
-
+        listData,
+        listComponent
     }
 }
 export function mapDispatchToProps(dispatch: Dispatch<Function>,props:any){
@@ -18,7 +16,7 @@ export function mapDispatchToProps(dispatch: Dispatch<Function>,props:any){
         dispatch(actions.getList());
     }
     return {
-        
+        initList:initList
     }
 }
 export function mergeProps(stateProps:Object,dispatchProps:Object,ownProps:Object){

@@ -20,9 +20,13 @@ export default class ListComponent extends React.Component<ListData,ListData>{
         // const {filterList} = this.props;
         // filterList(value);
     }
+    componentDidMount(){
+        const {initList} = this.props;
+        initList();
+    }
     render(){
-        const {listData} = this.props;
-        console.log(listData);
+        const {listData=[]} = this.props; 
+        debugger
         return (<div className={classNames.listContainer+" mylist"}>
            <header><Link to="/">back &gt;</Link>This is a test list</header>
            {/* <div>

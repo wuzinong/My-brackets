@@ -8,6 +8,7 @@ export default class List extends React.Component<ListData>{
     }
     render(){
         const {listData} = this.props;
+
         return(
             <ul>
                 {listData.map((item,index)=>{
