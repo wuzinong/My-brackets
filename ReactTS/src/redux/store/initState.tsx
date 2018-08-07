@@ -1,7 +1,10 @@
 
 export default{
-    
-    listData:{
+    demo:{
+        languageName:'',
+        enthusiasmLevel:0
+    },
+    handleListData:{
         listData:[],
         listComponent:null
     }

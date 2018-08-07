@@ -5,12 +5,12 @@ import {ListData} from '../../types';
 import axios from 'axios';
 
 
-export function handleListData(state:ListData=initState.listData,action:ListAction):ListData{
+export function handleListData(state:ListData=initState.handleListData,action:ListAction):ListData{
     switch (action.type){
         case GET_LIST:{
             axios.get("http://127.0.0.1:10010/data").then((response)=>{
-                let list =  response.data;
-                return Object.assign({},state,{listData:list});
+                let mylist =  response.data;
+                return Object.assign({},state,{listData:mylist});
                 // return {{},...state,...{listData:list}};
             });
                
@@ -22,4 +22,5 @@ export function handleListData(state:ListData=initState.listData,action:ListActi
         default:
            return state;  
     }
+    return state
 }

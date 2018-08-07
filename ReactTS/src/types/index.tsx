@@ -8,6 +8,6 @@ export interface StoreState {
 
 //list
 export interface ListData{
-    listData:Array<string>;
+    listData:string[];
     listComponent?:any
 } 
