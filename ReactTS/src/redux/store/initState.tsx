@@ -4,8 +4,8 @@ export default{
         languageName:'',
         enthusiasmLevel:0
     },
-    handleListData:{
-        listData:[],
+    list:{
+        listData:["initdata1"],
         listComponent:null
     }
 }

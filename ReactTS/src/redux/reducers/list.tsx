@@ -5,16 +5,20 @@ import {ListData} from '../../types';
 import axios from 'axios';
 
 
-export function handleListData(state:ListData=initState.handleListData,action:ListAction):ListData{
+export function handleListData(state:ListData=initState.list,action:ListAction):ListData{
     switch (action.type){
         case GET_LIST:{
-            axios.get("http://127.0.0.1:10010/api/data").then((response)=>{
-                let mylist =  response.data;
+            // axios.get("http://127.0.0.1:10010/api/data").then((response)=>{
+            //     let mylist =  response.data;
                 
-                return Object.assign({},state,{listData:mylist});
-                // return {{},...state,...{listData:list}};
-            });
-               
+            //     return Object.assign({},state,{listData:mylist});
+            //     // return {{},...state,...{listData:list}};
+            // });
+            let mylist =  [
+                "test1",
+                "test2"
+            ];
+            return {...state,...{listData:mylist}};
          }
         // case Filter_LIST:{
         //     const {name} = action; 

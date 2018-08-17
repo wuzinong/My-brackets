@@ -2,9 +2,9 @@
 import {connect,Dispatch} from 'react-redux';
 import ListComponent from './listComponent';
 import * as actions from '../../redux/actions/index';
-import {ListData} from '../../types/index';
+import {StoreState} from '../../types/index';
 
-export function mapStateToProps({listData,listComponent}:ListData){
+export function mapStateToProps({list:{listData,listComponent}}:StoreState){
     
     return {
         listData,

@@ -3,7 +3,8 @@ export interface demo{
     enthusiasmLevel?:number;
 }
 export interface StoreState {
-    demo?:demo
+    demo?:demo;
+    list:ListData
 }
 
 //list
