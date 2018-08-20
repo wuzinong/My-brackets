@@ -26,7 +26,7 @@ export default class ListComponent extends React.Component<ListData,ListData>{
     }
     render(){
         const {listData=[]} = this.props; 
-        debugger
+        
         return (<div className={classNames.listContainer+" mylist"}>
            <header><Link to="/">back &gt;</Link>This is a test list</header>
            {/* <div>

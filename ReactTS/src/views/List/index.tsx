@@ -13,6 +13,7 @@ export function mapStateToProps({list:{listData,listComponent}}:StoreState){
 }
 export function mapDispatchToProps(dispatch: Dispatch<Function>,props:any){
     const initList = ()=>{
+        debugger
         dispatch(actions.getList());
     }
     return {
