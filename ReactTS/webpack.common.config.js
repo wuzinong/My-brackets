@@ -25,7 +25,7 @@ module.exports = {
             inject:'body'
         }),
         new ExtractTextPlugin({
-            filename: 'bundle.css',
+            filename: '[name].bundle.css',
             disable: false,
             allChunks: true
         })
@@ -65,7 +65,7 @@ module.exports = {
             {
                 test:/.scss$/,
                 use:[
-                    "style-loader",
+                    "style-loader",//inline style tag
                     {
                       loader:"css-loader",
                       options:{
@@ -77,7 +77,19 @@ module.exports = {
                     "postcss-loader",
                     "sass-loader"
                 ]
-              },{
+              }
+            //   {
+            //     test:/.scss$/,
+            //     use: ExtractTextPlugin.extract({
+            //         fallback: 'style-loader',
+            //         use: [
+            //             'css-loader', 
+            //             'postcss-loader',
+            //             'sass-loader'
+            //         ]
+            //       })
+            //    }
+              ,{
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 include: /src/,
                 use: [
