@@ -12,7 +12,7 @@ export function mapStateToProps({list:{listData,listComponent}}:StoreState){
         listComponent
     }
 }
-export function mapDispatchToProps(dispatch: Dispatch<Function>,props:any){
+export function mapDispatchToProps(dispatch: any,props:any){
     const initList = ()=>{
         debugger
         dispatch(getData());
