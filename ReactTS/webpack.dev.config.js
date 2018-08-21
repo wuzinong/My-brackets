@@ -5,7 +5,7 @@ config.mode='development';
 config.devServer = {
     hot:true,
     port:'3001',
-    host:'0.0.0.0',
+    host:'127.0.0.1',
     inline:true,
     publicPath:'/',
     proxy: { 

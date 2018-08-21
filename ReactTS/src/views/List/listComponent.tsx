@@ -21,6 +21,9 @@ export default class ListComponent extends React.Component<ListData,ListData>{
         // filterList(value);
     }
     componentDidMount(){
+        
+    }
+    fetchData(){
         const {initList} = this.props;
         initList();
     }
@@ -28,7 +31,7 @@ export default class ListComponent extends React.Component<ListData,ListData>{
         const {listData=[]} = this.props; 
         
         return (<div className={classNames.listContainer+" mylist"}>
-           <header><Link to="/">back &gt;</Link>This is a test list</header>
+           <header><Link to="/">back &gt;</Link>This is a test list <button onClick={()=>{this.fetchData()}}>Get Data</button></header>
            {/* <div>
                <input ref={(value)=>this.searchInput = value} 
                       onKeyUp={()=>{this.search()}} type="text" placeholder="search ..."/>

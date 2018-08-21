@@ -2,6 +2,7 @@
 import {connect,Dispatch} from 'react-redux';
 import ListComponent from './listComponent';
 import * as actions from '../../redux/actions/index';
+import {getData} from '../../redux/reducers/list';
 import {StoreState} from '../../types/index';
 
 export function mapStateToProps({list:{listData,listComponent}}:StoreState){
@@ -14,7 +15,7 @@ export function mapStateToProps({list:{listData,listComponent}}:StoreState){
 export function mapDispatchToProps(dispatch: Dispatch<Function>,props:any){
     const initList = ()=>{
         debugger
-        dispatch(actions.getList());
+        dispatch(getData());
     }
     return {
         initList:initList

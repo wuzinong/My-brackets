@@ -10,3 +10,6 @@ export type GET_LIST = typeof GET_LIST;
 
 export const Filter_LIST = "Filter_LIST";
 export type Filter_LIST = typeof Filter_LIST;
+
+export const INIT_LIST = "INIT_LIST";
+export type INIT_LIST = typeof INIT_LIST;

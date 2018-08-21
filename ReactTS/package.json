@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --watch webpack.dev.config.js --exec \"npm run dev\"",
     "build": "webpack --config webpack.prod.config.js",
-    "dev": "webpack-dev-server --config webpack.dev.config.js"
+    "dev": "webpack-dev-server --config webpack.dev.config.js --open"
   },
   "author": "Bran gu",
   "license": "ISC",

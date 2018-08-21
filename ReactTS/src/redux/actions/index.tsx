@@ -40,4 +40,16 @@ export function filterList():Filter_LIST{
         type:constants.Filter_LIST
     }
 }
-export type ListAction = GET_LIST | Filter_LIST;
+
+export interface INIT_LIST{
+    type:constants.INIT_LIST,
+    listData:any
+}
+export function initList(listData:any):INIT_LIST{
+    return {
+        type:constants.INIT_LIST,
+        listData
+    }
+}
+
+export type ListAction = GET_LIST | Filter_LIST | INIT_LIST;
