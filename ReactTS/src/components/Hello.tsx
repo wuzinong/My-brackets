@@ -39,9 +39,10 @@ export default class Hello extends React.Component<Props, {}> {
       super(props);
     }
     render() {
+      debugger;
       const { name, enthusiasmLevel = 1, onIncrement, onDecrement } = this.props;
   
-      if (enthusiasmLevel <= 0) {
+      if (enthusiasmLevel < 0) {
         throw new Error('You could be a little more enthusiastic. :D');
       }
   

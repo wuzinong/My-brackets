@@ -46,7 +46,7 @@ module.exports = {
                 test:path.resolve(__dirname,'node_modules'),
                 name:"vendors",
                 priority: -10,
-                chunks:"initial",
+                //chunks:"initial",
                 enforce:true
               },
               default: {
@@ -62,33 +62,33 @@ module.exports = {
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
             // { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
             { test: /\.tsx?$/, loader: "ts-loader" },
-            {
-                test:/.scss$/,
-                use:[
-                    "style-loader",//inline style tag
-                    {
-                      loader:"css-loader",
-                      options:{
-                          minimize:true,
-                          modules: true, //enable css modules
-                          importLoaders: 2
-                      }
-                    },
-                    "postcss-loader",
-                    "sass-loader"
-                ]
-              }
-            //   {
+            // {
             //     test:/.scss$/,
-            //     use: ExtractTextPlugin.extract({
-            //         fallback: 'style-loader',
-            //         use: [
-            //             'css-loader', 
-            //             'postcss-loader',
-            //             'sass-loader'
-            //         ]
-            //       })
-            //    }
+            //     use:[
+            //         "style-loader",//inline style tag
+            //         {
+            //           loader:"css-loader",
+            //           options:{
+            //               minimize:true,
+            //               modules: true, //enable css modules
+            //               importLoaders: 2
+            //           }
+            //         },
+            //         "postcss-loader",
+            //         "sass-loader"
+            //     ]
+            //   }
+              {
+                test:/.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        'css-loader', 
+                        'postcss-loader',
+                        'sass-loader'
+                    ]
+                  })
+               }
               ,{
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 include: /src/,
