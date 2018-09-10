@@ -12,7 +12,7 @@ const config = {
     target:'web',
     entry:[
         'react-hot-loader/patch',
-        'webpack-dev-server/client?http://127.0.0.1:3000',
+        'webpack-dev-server/client?http://127.0.0.1:51487',
         'webpack/hot/only-dev-server',
         'babel-polyfill',
         './src/index.js'
