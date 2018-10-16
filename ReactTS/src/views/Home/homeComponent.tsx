@@ -33,7 +33,7 @@ class HomeComponent extends React.Component<MyProps,MyState>{
         var dyy = this.state.showDyy? <Dialogue info="test info" close={()=>{this.close()}}/>:null;
         return ( 
           <div className={classNames.whole}>
-            <p>A test frame for react practicing</p>
+            <p style={{fontFamily:"Avenir Next"}}>A test frame for react practicing</p>
             <h3>Effects</h3>
             <a href="javascript:void(0)" className={classNames.btn} onClick={()=>{this.openDialogue()}}>Dialogue</a>
             <h3>Pages:</h3>
