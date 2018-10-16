@@ -1,19 +1,38 @@
 const webpack = require('webpack');
-const config = require('./webpack.common.config');
+const baseConfig = require('./webpack.common.config');
 
-config.mode='development';
-config.devServer = {
-    hot:true,
-    port:'3001',
+
+const config= {
+   ...baseConfig,
+   // Enable sourcemaps for debugging webpack's output.
+   devtool: "source-map",
+   mode:'development',
+   devServer: {
+    historyApiFallback: {
+        index: '/index.development.html'
+    },
+    port: process.env.PORT || 3001,
     host:'127.0.0.1',
+    hot: true,
     inline:true,
+    overlay: true,
     publicPath:'/',
-    proxy: { 
-        "/api/**": {
-             target: 'http://127.0.0.1:10010', secure: false 
-            }  
-    }
-} 
-config.plugins.push(new webpack.HotModuleReplacementPlugin());
+    proxy: [
+        {
+            // TODO: Remove the / path. This is currently blocked by login redirect url going to /, and that request needs to be handled by the server, not client side.
+            //context: ['/', '/login', '/logout', '/api'],
+            target: 'https://127.0.0.1:3000',
+            secure: false
+        }
+    ]
+    },
+    plugins:[
+        ...baseConfig.plugins,
+        new webpack.HotModuleReplacementPlugin()
+    ]
+}
+
+
+ 
 module.exports = config;
 

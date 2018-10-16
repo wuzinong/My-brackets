@@ -4,15 +4,17 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
-    entry: ["./src/index.tsx"],
+    entry:{
+        vendor:['react','react-dom','react-router'],
+        app:["./src/index.tsx"]
+    },
     output: {
         filename:"[name].bundle.js",
         path: __dirname + "/dist",
         chunkFilename: '[name].[chunkhash:5].js'
     },
 
-    // Enable sourcemaps for debugging webpack's output.
-    devtool: "source-map",
+
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
@@ -61,7 +63,11 @@ module.exports = {
         rules: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
             // { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-            { test: /\.tsx?$/, loader: "ts-loader" },
+            {
+				test: /\.(js|jsx|ts|tsx)?$/,
+				loaders: ['ts-loader'],
+				exclude: /node_modules/
+			},
             // {
             //     test:/.scss$/,
             //     use:[
