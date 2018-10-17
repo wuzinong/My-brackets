@@ -1,0 +1,54 @@
+@import "./_fontFace";
+
+$avenir: (
+		name: 		'Avenir Next',
+		weight: 400,
+		srcs: (
+			eot:      'https://veracitycdn.azureedge.net/fonts/avenir-regular-lat-ext.eot',
+			woff:     'https://veracitycdn.azureedge.net/fonts/avenir-regular-lat-ext.woff',
+			truetype: 'https://veracitycdn.azureedge.net/fonts/avenir-regular-lat-ext.ttf',
+			svg:      'https://veracitycdn.azureedge.net/fonts/avenir-regular-lat-ext.svg',
+		)
+	),
+	(
+		name: 		'Avenir Next',
+		weight:		500, // medium
+		srcs: (
+			eot:      'https://veracitycdn.azureedge.net/fonts/avenir-medium-lat-ext.eot',
+			woff:     'https://veracitycdn.azureedge.net/fonts/avenir-medium-lat-ext.woff',
+			truetype: 'https://veracitycdn.azureedge.net/fonts/avenir-medium-lat-ext.ttf',
+			svg:      'https://veracitycdn.azureedge.net/fonts/avenir-medium-lat-ext.svg'
+		)
+	),
+	(
+		name: 		'Avenir Next',
+		weight:		600, // demi
+		srcs: (
+			eot:      'https://veracitycdn.azureedge.net/fonts/avenir-demi-lat-ext.eot',
+			woff:     'https://veracitycdn.azureedge.net/fonts/avenir-demi-lat-ext.woff',
+			truetype: 'https://veracitycdn.azureedge.net/fonts/avenir-demi-lat-ext.ttf',
+			svg:      'https://veracitycdn.azureedge.net/fonts/avenir-demi-lat-ext.svg'
+		)
+	),
+	(
+		name: 		'Avenir Next',
+		weight:		700, // bold
+		srcs: (
+			eot:      'https://veracitycdn.azureedge.net/fonts/avenir-bold-lat-ext.eot',
+			woff:     'https://veracitycdn.azureedge.net/fonts/avenir-bold-lat-ext.woff',
+			truetype: 'https://veracitycdn.azureedge.net/fonts/avenir-bold-lat-ext.ttf',
+			svg:      'https://veracitycdn.azureedge.net/fonts/avenir-bold-lat-ext.svg'
+		)
+	);
+
+$avenir_fontFamily: "Avenir Next";
+@mixin fontface-avenir(){
+	@each $font in $avenir {
+		@include fontFace(
+				map-get($font, name),
+				map-get($font, srcs),
+				map-get($font, weight)
+			);
+	}
+}
+
