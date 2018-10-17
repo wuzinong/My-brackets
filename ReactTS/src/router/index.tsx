@@ -7,15 +7,18 @@ import asyncComponent from '../libs/AsyncComponents';
 
 // import Loading from '../components/loading';
 
-// import Hello from '../views/Hello';
-// import Home from '../views/Home';
-// import NotFound from '../views/NotFound';
+import Hello from '../views/Hello';
+import Home from '../views/Home';
+import NotFound from '../views/NotFound';
+import About from '../views/About';
+import List from '../views/List';
 
-const Hello = asyncComponent(()=>import('../views/Hello'));
-const Home = asyncComponent(()=>import('../views/Home'));
-const NotFound = asyncComponent(()=>import('../views/NotFound'));
-const About = asyncComponent(()=>import('../views/About'));
-const List = asyncComponent(()=>import('../views/List'));
+
+// const Hello = asyncComponent(()=>import('../views/Hello'));
+// const Home = asyncComponent(()=>import('../views/Home'));
+// const NotFound = asyncComponent(()=>import('../views/NotFound'));
+// const About = asyncComponent(()=>import('../views/About'));
+// const List = asyncComponent(()=>import('../views/List'));
 // function MyLoading(){
 //     return <div>Loading...</div>
 // }
@@ -39,7 +42,7 @@ const store = configureStore();
 
 const App =()=>(
     <Provider store={store}>
-        <BrowserRouter>
+        <HashRouter>
             <Switch>
                     <Route exact path="/" component={Home} />
                     <Route path="/Hello" 
@@ -60,7 +63,7 @@ const App =()=>(
                     </Route>
                     <Redirect exact path='*' to='/NotFound'></Redirect>
             </Switch>
-        </BrowserRouter>
+        </HashRouter>
     </Provider>
 )
 export default App;

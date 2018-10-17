@@ -5,7 +5,7 @@
         "noImplicitAny": true,
         "allowSyntheticDefaultImports":true,//允许使用import React from 'react'这种方式引入模块
         "module":"esnext", // esnext 支持 lazyload  commonjs
-        "target": "es5", // 编译成 es5
+        "target": "es3", // 编译成 es3, es5, es2015
         "jsx":"react",
         "removeComments": false,
         "lib":[
