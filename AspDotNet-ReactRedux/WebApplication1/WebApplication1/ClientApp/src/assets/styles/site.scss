@@ -1,0 +1,14 @@
+﻿
+@import './normalize.css';
+@import './colors.scss';
+@import './fonts/_avenir.scss';
+@import './fonts/_broaderview.scss';
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Avenir Next", Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    color:green;
+}
+@include fontface-avenir();

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import '../assets/styles/site.scss';
 
 const Home = props => (
   <div>

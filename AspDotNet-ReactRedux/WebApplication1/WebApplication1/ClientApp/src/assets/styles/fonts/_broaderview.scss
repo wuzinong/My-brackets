@@ -1,0 +1,12 @@
+@import "./_fontFace";
+
+$broaderView: (
+  eot:      'https://veracitycdn.azureedge.net/fonts/broaderview-medium-webfont.eot?#iefix',
+  woff:     'https://veracitycdn.azureedge.net/fonts/broaderview-medium-webfont.woff',
+  truetype: 'https://veracitycdn.azureedge.net/fonts/broaderview-medium-webfont.ttf',
+  svg:      'https://veracitycdn.azureedge.net/fonts/broaderview-medium-webfont.svg'
+);
+
+@mixin fontface-broaderView(){
+	@include fontFace('Broader View', $broaderView)
+}
