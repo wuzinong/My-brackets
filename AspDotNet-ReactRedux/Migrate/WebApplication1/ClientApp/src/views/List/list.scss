@@ -1,0 +1,22 @@
+ 
+:local{
+    .listContainer{
+        min-height: 400px;
+        header{
+            width:80%;
+            margin:0 auto;
+            position: relative;
+
+        }
+        ul{
+            list-style: disc;
+            width:80%;
+            margin:0 auto;
+        }
+        input{
+            margin-top:10px;
+            width:80%;
+        }
+    }
+ 
+}

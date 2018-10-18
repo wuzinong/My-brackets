@@ -1,0 +1,28 @@
+@keyframes Spinner-anim {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.SpinnerL {
+	margin-right: auto;
+	margin-left: auto;
+	background: none;
+	width: 165px;
+	height: 165px;
+	text-align: center;
+}
+
+.SpinnerL div {
+	margin: auto;
+	width: 160px;
+	height: 160px;
+	border-radius: 80px;
+	box-shadow: 0 3px 0 0 #003591;
+	transform-origin: 80px 81.5px;
+	animation: Spinner-anim 1s linear infinite;
+}
+

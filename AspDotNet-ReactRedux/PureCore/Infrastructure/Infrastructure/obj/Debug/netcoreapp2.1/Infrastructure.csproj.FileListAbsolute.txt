@@ -1,0 +1,14 @@
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\bin\Debug\netcoreapp2.1\Infrastructure.deps.json
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\bin\Debug\netcoreapp2.1\Infrastructure.runtimeconfig.json
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\bin\Debug\netcoreapp2.1\Infrastructure.runtimeconfig.dev.json
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\bin\Debug\netcoreapp2.1\Infrastructure.dll
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\bin\Debug\netcoreapp2.1\Infrastructure.pdb
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.csprojAssemblyReference.cache
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.csproj.CoreCompileInputs.cache
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.RazorAssemblyInfo.cache
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.RazorAssemblyInfo.cs
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.AssemblyInfoInputs.cache
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.AssemblyInfo.cs
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.RazorTargetAssemblyInfo.cache
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.dll
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.pdb
