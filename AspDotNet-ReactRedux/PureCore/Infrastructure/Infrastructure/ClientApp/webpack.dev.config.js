@@ -7,10 +7,17 @@ const config= {
    // Enable sourcemaps for debugging webpack's output.
    devtool: "source-map",
    mode:'development',
+   entry:{
+    vendor:['react','react-dom','react-router'],
+    app:[
+        "react-hot-loader/patch",
+        "./src/index.tsx"
+     ]
+   },
    devServer: {
-    // historyApiFallback: {
-    //     index: '/index.development.html'
-    // },
+    historyApiFallback: {
+        index: '/index.html'
+    },
     port: process.env.PORT || 3001,
     host:'127.0.0.1',
     hot: true,
