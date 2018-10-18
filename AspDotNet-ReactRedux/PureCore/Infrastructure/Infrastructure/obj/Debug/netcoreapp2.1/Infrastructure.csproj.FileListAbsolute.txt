@@ -12,3 +12,12 @@ C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastruc
 C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.RazorTargetAssemblyInfo.cache
 C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.dll
 C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.pdb
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\bin\Debug\netcoreapp2.1\Infrastructure.Views.dll
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\bin\Debug\netcoreapp2.1\Infrastructure.Views.pdb
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.TagHelpers.input.cache
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.TagHelpers.output.cache
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.RazorCoreGenerate.cache
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.RazorTargetAssemblyInfo.cs
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.Views.pdb
+C:\My\GitHub\My-brackets\AspDotNet-ReactRedux\PureCore\Infrastructure\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.csproj.CopyComplete

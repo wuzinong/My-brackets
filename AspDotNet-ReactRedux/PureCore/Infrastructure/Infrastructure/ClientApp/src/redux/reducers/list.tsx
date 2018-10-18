@@ -16,8 +16,9 @@ export function handleListData(state:ListData=initState.list,action:ListAction):
             // ];
             // return {...state,...{listData:mylist}};
         }
-        case GET_LIST:{
-            axios.get("http://127.0.0.1:10010/api/data").then((response)=>{
+        case GET_LIST: {
+            let url = "http://127.0.0.1:10010/api/data";
+            axios.get(url).then((response)=>{
                 let mylist =  response.data;
                 debugger;
                 
@@ -39,7 +40,9 @@ export function handleListData(state:ListData=initState.list,action:ListAction):
 }
 
 const getData =()=> (dispatch:Dispatch<Function>):void=>{
-    axios.get("http://127.0.0.1:10010/api/data").then((response)=>{
+    let url = "/api/GetList";
+    debugger
+    axios.get(url).then((response)=>{
         dispatch(initList(response.data));
    });
 }

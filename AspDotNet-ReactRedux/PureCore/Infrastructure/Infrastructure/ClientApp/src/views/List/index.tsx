@@ -14,7 +14,6 @@ export function mapStateToProps({list:{listData,listComponent}}:StoreState){
 }
 export function mapDispatchToProps(dispatch: any,props:any){
     const initList = ()=>{
-        debugger
         dispatch(getData());
     }
     return {
