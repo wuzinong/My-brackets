@@ -42,7 +42,7 @@ const store = configureStore();
 
 const App =()=>(
     <Provider store={store}>
-        <BrowserRouter>
+        <HashRouter>
             <Switch>
                     <Route exact path="/" component={Home} />
                     <Route path="/Hello" 
@@ -63,7 +63,7 @@ const App =()=>(
                     </Route>
                     <Redirect exact path='*' to='/NotFound'></Redirect>
             </Switch>
-        </BrowserRouter>
+        </HashRouter>
     </Provider>
 )
 export default App;

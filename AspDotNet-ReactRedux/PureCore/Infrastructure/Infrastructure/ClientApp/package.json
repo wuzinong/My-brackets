@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --watch webpack.common.config.js --exec \"npm run dev\"",
-    "build": "webpack --config webpack.prod.config.js",
-    "dev": "webpack-dev-server --config webpack.dev.config.js --open"
+    "start": "nodemon --watch ./config/webpack.common.config.js --exec \"npm run dev\"",
+    "build": "webpack --config ./config/webpack.prod.config.js",
+    "dev": "webpack-dev-server --config ./config/webpack.dev.config.js --open"
   },
   "author": "Bran gu",
   "license": "ISC",
@@ -23,6 +23,7 @@
     "autoprefixer": "^9.1.0",
     "axios": "^0.18.0",
     "normalize.css": "^8.0.0",
+    "promise": "^8.0.2",
     "react": "^16.4.1",
     "react-async-component": "^2.0.0",
     "react-dom": "^16.4.1",
@@ -34,7 +35,11 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.2",
     "awesome-typescript-loader": "^5.2.0",
+    "babel-loader": "^8.0.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
