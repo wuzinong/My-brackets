@@ -43,7 +43,8 @@ namespace Infrastructure
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseReactDevelopmentServer(npmScript: "dev");
+                    spa.UseProxyToSpaDevelopmentServer("http://localhost:3001");
+                    //spa.UseReactDevelopmentServer(npmScript: "dev");
                 }
             });
         }
