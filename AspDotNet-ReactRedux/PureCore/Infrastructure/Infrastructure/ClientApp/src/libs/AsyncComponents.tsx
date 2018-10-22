@@ -6,7 +6,7 @@ interface AsyncComponentState{
 export default function asyncComponent(getComponent: any): any  {
     class AsyncComponent extends React.Component<{},AsyncComponentState> {
 
-
+        private _isMounted:boolean;
         constructor(props: any) {
             super(props);
 
@@ -16,12 +16,17 @@ export default function asyncComponent(getComponent: any): any  {
         }
 
         async componentDidMount(){
+            this._isMounted = true;
             const {default: Component} = await getComponent();
-            this.setState({
-                Component: Component
-            });
+            if(this._isMounted){
+                this.setState({
+                    Component: Component
+                });
+            }
 
-
+        }
+        componentWillUnmount(){
+            this._isMounted = false;
         }
 
 
