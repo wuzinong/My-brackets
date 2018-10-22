@@ -3,6 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const srcPath = subdir => path.resolve(__dirname, '../../../ClientApp/src', subdir)
 module.exports = {
     entry:{
         vendor:['react','react-dom','react-router'],
@@ -22,11 +23,11 @@ module.exports = {
         alias: {
 			Common: srcPath('components/Common'),
 			consts: srcPath('consts.js'),
-			styles: srcPath('styles'),
-			store: srcPath('store'),
-			utils: srcPath('utils'),
+			styles: srcPath('/assets/styles'),
+			store: srcPath('/redux/store'),
+			utils: srcPath('utils')
 
-			csstheme: themePath.lightTheme
+			//csstheme: themePath.lightTheme
 		},
         // Add '.ts' and '.tsx' as resolvable extensions.
         extensions: [".ts", ".tsx",".jsx", ".js", ".json"]

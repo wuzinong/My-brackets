@@ -42,7 +42,7 @@ const config= {
     //     ]
         proxy: { 
             "/api/**": {
-                target: 'https://localhost:44326/', 
+                target: 'https://localhost:44326/', //backend server
                 secure: false,
                 changeOrigin: true,// ??????,??????????
             }  
