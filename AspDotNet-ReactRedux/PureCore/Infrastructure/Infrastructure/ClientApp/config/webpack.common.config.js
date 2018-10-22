@@ -19,6 +19,15 @@ module.exports = {
 
 
     resolve: {
+        alias: {
+			Common: srcPath('components/Common'),
+			consts: srcPath('consts.js'),
+			styles: srcPath('styles'),
+			store: srcPath('store'),
+			utils: srcPath('utils'),
+
+			csstheme: themePath.lightTheme
+		},
         // Add '.ts' and '.tsx' as resolvable extensions.
         extensions: [".ts", ".tsx",".jsx", ".js", ".json"]
     },
@@ -27,8 +36,8 @@ module.exports = {
             template:'./index.html',
             filename:'index.html',
             inject:'body',
-            chunks: ["polyfill","app","vendor"], // ???????????
-            chunksSortMode: "manual" // manual??chunks???????
+            chunks: ["polyfill","app","vendor"],
+            chunksSortMode: "manual"
         }),
         new ExtractTextPlugin({
             filename: '[name].bundle.css',
@@ -113,7 +122,7 @@ module.exports = {
                 ]
              },
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-            { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
+            //{ enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
         ]
     },
 
