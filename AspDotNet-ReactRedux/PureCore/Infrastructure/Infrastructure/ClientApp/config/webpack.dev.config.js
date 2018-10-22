@@ -16,6 +16,12 @@ const config= {
         "./src/index.tsx"
      ]
    },
+   module:{
+     rules:[
+        ...baseConfig.module.rules,
+        { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
+     ]
+   },
    devServer: {
     historyApiFallback: {
         index: '/index.html'

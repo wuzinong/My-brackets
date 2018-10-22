@@ -34,12 +34,12 @@ const config = {
             },
             filename:'index.html',
             inject:'body'
-        }),
-        new ExtractTextPlugin({
-            filename: 'bundle.css',
-            disable: false,
-            allChunks: true
         })
+        // new ExtractTextPlugin({
+        //     filename: 'bundle.css',
+        //     disable: false,
+        //     allChunks: true
+        // })
     ]
 }
 

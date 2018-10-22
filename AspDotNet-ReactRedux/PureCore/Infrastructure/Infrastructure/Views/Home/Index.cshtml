@@ -1,7 +1,25 @@
 ﻿
 @{
     ViewData["Title"] = "Index";
+    Layout = null;
 }
 
-<h2>Index</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./ClientApp/dist/app.bundle.css" rel="stylesheet">
+    <title>@ViewData["Title"] </title>
+</head>
+<body>
+    <div id="container"></div>
+  
+        <script src="./ClientApp/dist/vendor.bundle.js"></script>
+        <script src="./ClientApp/dist/polyfill.bundle.js"></script>
+        <script src="./ClientApp/dist/app.bundle.js"></script>
+    
+</body>
+</html>
 
