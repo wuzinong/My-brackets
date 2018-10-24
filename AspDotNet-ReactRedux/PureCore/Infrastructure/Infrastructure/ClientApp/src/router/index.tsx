@@ -12,13 +12,14 @@ import asyncComponent from '../libs/AsyncComponents';
 // import NotFound from '../views/NotFound';
 // import About from '../views/About';
 // import List from '../views/List';
-
+// import UserProfile from '../views/UserProfile';
 
 const Hello = asyncComponent(()=>import('../views/Hello'));
 const Home = asyncComponent(()=>import('../views/Home'));
 const NotFound = asyncComponent(()=>import('../views/NotFound'));
 const About = asyncComponent(()=>import('../views/About'));
 const List = asyncComponent(()=>import('../views/List'));
+const UserProfile = asyncComponent(()=>import('../views/UserProfile'));
 
 // function MyLoading(){
 //     return <div>Loading...</div>
@@ -60,8 +61,10 @@ const App =()=>(
                     ></Route>
                     <Route path="/List"
                         component = {List}
-                    >
-                    </Route>
+                    ></Route>
+                    <Route path="/UserProfile"
+                        component = {UserProfile}
+                    ></Route>
                     <Redirect exact path='*' to='/NotFound'></Redirect>
             </Switch>
         </BrowserRouter>

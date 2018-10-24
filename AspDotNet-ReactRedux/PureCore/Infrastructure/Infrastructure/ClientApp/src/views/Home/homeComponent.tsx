@@ -40,6 +40,7 @@ class HomeComponent extends React.Component<MyProps,MyState>{
             <a href="javascript:void(0)" className={classNames.btn} onClick={handleClick}>About me</a> 
             <Link className={classNames.bt} to="/hello">Hello Demo</Link>
             <Link className={classNames.btn} to='/list'>Go to List</Link>
+            <Link className={classNames.btn} to='/userprofile'>User profile</Link>
             {dyy}
           </div> 
         )
