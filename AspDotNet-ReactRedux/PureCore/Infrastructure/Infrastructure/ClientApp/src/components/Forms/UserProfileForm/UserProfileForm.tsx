@@ -35,11 +35,12 @@ class UserProfileForm extends React.Component<UserProfileFormProps,UserProfileFo
         console.log(event.target.tagName)
         console.log(event.target.value)
         switch (event.target.tagName){
-            case "INPUT":{
+            case "INPUT":
+            case "SELECT":{
                 this.setState({
-                  ...this.state,
-                  [name]:event.target.value
-                });
+                    ...this.state,
+                    [name]:event.target.value
+                  });
             }
             default: break;
         }
