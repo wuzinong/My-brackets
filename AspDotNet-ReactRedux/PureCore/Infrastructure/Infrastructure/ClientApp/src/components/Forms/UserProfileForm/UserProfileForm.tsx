@@ -1,28 +1,54 @@
 import React from 'react';
 
-class UserProfileForm extends React.Component{
+interface UserProfileFormProps{
+    
+}
+
+interface UserProfileFormState{
+   UserName:string;
+   Email:string;
+   FirstName:string;
+   LastName:string;
+   DisplayName:string;
+   Country:string;
+   Language:string;
+   Mobile:string;
+}
+
+class UserProfileForm extends React.Component<UserProfileFormProps,UserProfileFormState>{
     constructor(props:any){
         super(props);
-        // this.state = {
-        //     UserName:"Bran",
-        //     Email:"wuzinong@gmail.com",
-        //     FirstName:"",
-        //     LastName:"",
-        //     DisplayName:"",
-        //     Country:"",
-        //     Language:"",
-        //     Mobile:"",
-        // };
+        this.state = {
+            UserName:"Bran",
+            Email:"wuzinong@gmail.com",
+            FirstName:"",
+            LastName:"",
+            DisplayName:"",
+            Country:"China",
+            Language:"",
+            Mobile:"",
+        };
     }
-    handleValueChange = ()=>{
-
+    handleValueChange = (name:string,event:any)=>{
+        debugger;
+        console.log(name);
+        console.log(event.target.tagName)
+        console.log(event.target.value)
+        switch (event.target.tagName){
+            case "INPUT":{
+                this.setState({
+                  ...this.state
+                })
+            }
+            default: break;
+        }
     }
 
     submitForm = (e:any)=>{
         console.log(e)
     }
     render(){
-        // let {UserName,Email,FirstName,LastName,DisplayName,Country,Language,Mobile} = this.state;
+        let {UserName,Email,FirstName,LastName,DisplayName,Country,Language,Mobile} = this.state;
         return (
             <form action="">
                <h1>gu, xiehai</h1>
@@ -38,7 +64,7 @@ class UserProfileForm extends React.Component{
                       <label htmlFor="">User name</label>
                       <div className="row">
                         <div className="col-md-6">
-                            <input name="username" className="form-control" type="text"/>
+                            <input value={UserName} className="form-control" type="text" onChange={this.handleValueChange.bind(this,'UserName')}/>
                         </div>
                       </div>
                   </div>
@@ -46,7 +72,7 @@ class UserProfileForm extends React.Component{
                       <label htmlFor="">Email address*</label>
                       <div className="row">
                         <div className="col-md-6">
-                            <input className="form-control" type="email"/>
+                            <input value={Email} className="form-control" type="text" onChange={this.handleValueChange.bind(this,'Email')}/>
                         </div>
                       </div>
                   </div>
@@ -54,7 +80,7 @@ class UserProfileForm extends React.Component{
                       <label htmlFor="">First name*</label>
                       <div className="row">
                         <div className="col-md-6">
-                            <input className="form-control" type="text"/>
+                            <input value={FirstName} className="form-control" type="text" onChange={this.handleValueChange.bind(this,'FirstName')}/>
                         </div>
                       </div>
                   </div>
@@ -62,7 +88,7 @@ class UserProfileForm extends React.Component{
                       <label htmlFor="">Last name*</label>
                       <div className="row">
                         <div className="col-md-6">
-                            <input className="form-control" type="text"/>
+                            <input value={LastName} className="form-control" type="text"  onChange={this.handleValueChange.bind(this,'LastName')}/>
                         </div>
                       </div>
                   </div>
@@ -70,7 +96,7 @@ class UserProfileForm extends React.Component{
                       <label htmlFor="">Display name</label>
                       <div className="row">
                         <div className="col-md-6">
-                            <input className="form-control" type="text"/>
+                            <input value={DisplayName} className="form-control" type="text"  onChange={this.handleValueChange.bind(this,'DisplayName')}/>
                         </div>
                       </div>
                   </div>
@@ -78,7 +104,7 @@ class UserProfileForm extends React.Component{
                       <label htmlFor="">Country*</label>
                       <div className="row">
                         <div className="col-md-6">
-                            <select className="form-control" name="" id="">
+                            <select value={Country} className="form-control" name="" id=""  onChange={this.handleValueChange.bind(this,'Country')}>
                                <option value="China">China</option>
                                <option value="Norway">norway</option>
                             </select>
@@ -89,7 +115,7 @@ class UserProfileForm extends React.Component{
                       <label htmlFor="">Language</label>
                       <div className="row">
                         <div className="col-md-6">
-                            <select className="form-control" name="" id="">
+                            <select value={Language} className="form-control"  onChange={this.handleValueChange.bind(this,'Language')}>
                                <option value="English">English-English</option>
                                <option value="Chinese">Chinese</option>
                             </select>
@@ -100,7 +126,7 @@ class UserProfileForm extends React.Component{
                       <label htmlFor="">Phone number</label>
                       <div className="row">
                         <div className="col-md-6">
-                            <input className="form-control" type="text"/>
+                            <input value={Mobile} className="form-control" type="text"  onChange={this.handleValueChange.bind(this,'Mobile')}/>
                         </div>
                         <div className="col-md-6">
                            <p>Phone number should start with country code and preferably be a mobile phone number.</p>
