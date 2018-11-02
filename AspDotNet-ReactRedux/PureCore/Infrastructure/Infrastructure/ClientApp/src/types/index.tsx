@@ -13,3 +13,27 @@ export interface ListData{
     listComponent?:any;
     initList?:any;
 } 
+
+//userProfile
+export interface UserProfile {
+    userName: string;
+    email: string;
+    firstName: string;
+    lastName: string;
+    displayName: string;
+    country: string;
+    language: string;
+    mobile: string;
+    showSpinner?:boolean;
+}
+
+export interface errorHandler {
+    hasError: boolean;
+    errorMsg?: string;
+}
+
+export interface ReturnMessage{
+    status:number;
+    msg:string;
+    payload:UserProfile;
+}

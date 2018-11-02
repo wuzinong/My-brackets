@@ -7,5 +7,16 @@ export default{
     list:{
         listData:["initdata1"],
         listComponent:null
-    }
+    },
+//     userInfo: {
+//         userName: '',
+//         email: '',
+//         firstName: '',
+//         lastName: '',
+//         displayName: '',
+//         country: '',
+//         language: '',
+//         mobile: '',
+//         showSpinner:true
+//    }
 }

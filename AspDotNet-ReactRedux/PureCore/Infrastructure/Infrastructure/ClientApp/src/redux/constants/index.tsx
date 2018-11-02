@@ -13,3 +13,6 @@ export type Filter_LIST = typeof Filter_LIST;
 
 export const INIT_LIST = "INIT_LIST";
 export type INIT_LIST = typeof INIT_LIST;
+
+export const INIT_USERPROFILE = "INIT_USERPROFILE"
+export type INIT_USERPROFILE = typeof INIT_USERPROFILE;

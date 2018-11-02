@@ -53,3 +53,15 @@ export function initList(listData:any):INIT_LIST{
 }
 
 export type ListAction = GET_LIST | Filter_LIST | INIT_LIST;
+
+export interface INIT_USERPROFILE{
+    type:constants.INIT_USERPROFILE,
+    userInfo:any
+}
+export function initUserProfile(userInfo:any):INIT_USERPROFILE{
+    return {
+        type:constants.INIT_USERPROFILE,
+        userInfo
+    }
+}
+export type UserProfileAction = INIT_USERPROFILE;
