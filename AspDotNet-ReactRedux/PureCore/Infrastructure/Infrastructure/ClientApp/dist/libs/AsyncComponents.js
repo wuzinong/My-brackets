@@ -73,16 +73,23 @@ export default function asyncComponent(getComponent) {
                 var Component;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
-                        case 0: return [4 /*yield*/, getComponent()];
+                        case 0:
+                            this._isMounted = true;
+                            return [4 /*yield*/, getComponent()];
                         case 1:
-                            Component = (_a.sent())["default"];
-                            this.setState({
-                                Component: Component
-                            });
+                            Component = (_a.sent()).default;
+                            if (this._isMounted) {
+                                this.setState({
+                                    Component: Component
+                                });
+                            }
                             return [2 /*return*/];
                     }
                 });
             });
+        };
+        AsyncComponent.prototype.componentWillUnmount = function () {
+            this._isMounted = false;
         };
         AsyncComponent.prototype.render = function () {
             var C = this.state.Component;

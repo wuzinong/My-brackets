@@ -10,11 +10,13 @@ import asyncComponent from '../libs/AsyncComponents';
 // import NotFound from '../views/NotFound';
 // import About from '../views/About';
 // import List from '../views/List';
+// import UserProfile from '../views/UserProfile';
 var Hello = asyncComponent(function () { return import('../views/Hello'); });
 var Home = asyncComponent(function () { return import('../views/Home'); });
 var NotFound = asyncComponent(function () { return import('../views/NotFound'); });
 var About = asyncComponent(function () { return import('../views/About'); });
 var List = asyncComponent(function () { return import('../views/List'); });
+var UserProfile = asyncComponent(function () { return import('../views/UserProfile'); });
 // function MyLoading(){
 //     return <div>Loading...</div>
 // }
@@ -40,6 +42,7 @@ var App = function () { return (React.createElement(Provider, { store: store },
             React.createElement(Route, { path: "/NotFound", component: NotFound }),
             React.createElement(Route, { path: "/About", component: About }),
             React.createElement(Route, { path: "/List", component: List }),
+            React.createElement(Route, { path: "/UserProfile", component: UserProfile }),
             React.createElement(Redirect, { exact: true, path: '*', to: '/NotFound' }))))); };
 export default App;
 //# sourceMappingURL=index.js.map

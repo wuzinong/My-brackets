@@ -44,6 +44,7 @@ var HomeComponent = /** @class */ (function (_super) {
             React.createElement("a", { href: "javascript:void(0)", className: classNames.btn, onClick: handleClick }, "About me"),
             React.createElement(Link, { className: classNames.bt, to: "/hello" }, "Hello Demo"),
             React.createElement(Link, { className: classNames.btn, to: '/list' }, "Go to List"),
+            React.createElement(Link, { className: classNames.btn, to: '/userprofile' }, "User profile"),
             dyy));
     };
     return HomeComponent;

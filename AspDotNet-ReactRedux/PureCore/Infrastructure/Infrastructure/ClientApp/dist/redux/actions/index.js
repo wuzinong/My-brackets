@@ -25,4 +25,10 @@ export function initList(listData) {
         listData: listData
     };
 }
+export function initUserProfile(userInfo) {
+    return {
+        type: constants.INIT_USERPROFILE,
+        userInfo: userInfo
+    };
+}
 //# sourceMappingURL=index.js.map

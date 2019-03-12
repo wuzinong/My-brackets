@@ -6,6 +6,6 @@ export default {
     list: {
         listData: ["initdata1"],
         listComponent: null
-    }
+    },
 };
 //# sourceMappingURL=initState.js.map
