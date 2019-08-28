@@ -5,5 +5,17 @@
 }
 
     <div>
-        test
+        <button id="btn">logout</button>
     </div>
+
+
+    <script>
+
+        $(function () {
+            $("#btn").on("click", function () {
+                $.post("/secret/admin/logout", function (data) {
+                    alert(data)
+                })
+            });
+        });
+    </script>
