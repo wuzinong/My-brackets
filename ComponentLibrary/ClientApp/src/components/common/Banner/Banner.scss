@@ -1,0 +1,121 @@
+@import '~styles/colors.scss';
+@import '~styles/variables.scss';
+@import '~styles/mixins.scss';
+
+//$imgWraperHeigth: 360px;
+
+:global {
+
+    .banner-wrapper {
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+        margin-top: 0;
+
+        .flex-container {
+            .left-of {
+                background-color: rgb(0,42,62);
+            }
+
+            .banner {
+                position: relative;
+
+                .gradient {
+                    color: white;
+                    position: absolute;
+                    left: 0;
+                    height: 100%;
+                    padding: 0 24px;
+
+                    h1 {
+                        font-size: 28px;
+                        font-weight: 600;
+                        text-align: left;
+                        margin: 0;
+                        margin-bottom: 20px;
+                    }
+
+                    h2 {
+                        font-size: 20px;
+                        font-weight: normal;
+                        text-align: left;
+                        margin: 0;
+                    }
+
+                    .provider-logo {
+                        background: white;
+                        max-width: 128px;
+                        bottom: 0;
+                        padding: 16px;
+                        padding-bottom: 0;
+                        border-radius: 8px 8px 0 0;
+                    }
+                }
+            }
+
+            .right-of {
+            }
+        }
+    }
+
+    @include minSize($screen_md) {
+        .banner-wrapper {
+            .flex-container {
+                display: flex;
+
+                .left-of, .right-of {
+                    flex-grow: 1;
+                }
+
+                .banner {
+                    flex-grow: 1;
+                    max-width: 1200px;
+                    width: 100%;
+                    height: 360px;
+
+                    .spacer {
+                        display: none;
+                    }
+
+                    .gradient {
+                        width: 500px;
+                        background-image: linear-gradient(to right, rgba(0,42,62,1) 60%, rgba(0,42,62,0));
+
+                        .provider-logo {
+                            position: absolute;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include maxSize($screen_md) {
+        .banner-wrapper {
+            background-position-y: 0;
+
+            .flex-container {
+                display: block;
+
+                .left-of, .right-of {
+                    display: none;
+                }
+
+                .banner {
+                    width: 100%;
+
+                    .spacer {
+                        display: block;
+                        height: 180px;
+                    }
+
+                    .gradient {
+                        background: rgb(0,42,62);
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+}

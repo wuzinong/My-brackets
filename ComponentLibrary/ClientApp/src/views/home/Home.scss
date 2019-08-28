@@ -1,0 +1,118 @@
+@import '~styles/variables.scss';
+@import '~styles/mixins.scss';
+
+:global {
+    main {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+        text-align: center;
+
+        .btn {
+            display: block;
+            padding: 10px 0;
+        }
+    }
+
+    .right {
+        position: absolute;
+        right: 0;
+    }
+
+    .cards {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            display: block;
+            width: calc(50% - 16px);
+            margin: 16px 0;
+            float: left;
+
+            &:nth-of-type(odd) {
+                margin-right: 16px;
+            }
+
+            &:nth-of-type(even) {
+                margin-left: 16px;
+            }
+
+            a {
+                display: flex;
+                background: white;
+                border: 1px solid rgb(0,42,62);
+                position: relative;
+                transition: 0.2s;
+
+                .image-wrapper {
+                    width: 25%;
+                    min-height: 250px;
+                    background: rgb(0,42,62);
+                    position: relative;
+
+                    img {
+                        width: 100%;
+                    }
+
+                    .category {
+                        position: absolute;
+                        bottom: 24px;
+                        text-align: center;
+                        color: white;
+                        width: 100%;
+                        font-size: 16px;
+                        font-weight: 600;
+                    }
+                }
+
+                .text-wrapper {
+                    width: 75%;
+                    text-align: left;
+                    padding: 16px;
+
+                    h4 {
+                        font-size: 16px;
+                        font-weight: 600;
+                        margin-top: 0;
+                    }
+                }
+
+                .provider-logo {
+                    max-width: 96px;
+                    max-height: 96px;
+                    position: absolute;
+                    right: 16px;
+                    bottom: 16px;
+                }
+
+                &:hover {
+                    box-shadow: 0 1px 4px rgba(0, 42, 62, 0.5), 0 0 32px rgba(0, 42, 62, 0.2);
+                }
+            }
+        }
+    }
+
+    section {
+        width: 100%;
+        margin: 16px auto;
+    }
+
+    .constrain-width {
+        max-width: 1200px;
+
+        &.reverse {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+
+    @include maxSize($screen_md) {
+        .cards {
+            li {
+                width: calc(100% - 32px);
+                margin: 16px;
+            }
+        }
+    }
+}

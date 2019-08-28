@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "outDir":"./dist/", 
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "allowSyntheticDefaultImports":true,
+        "module":"esnext", 
+        "target": "es5", 
+        "jsx":"react",
+        "removeComments": false,
+        "lib":[
+         "dom",
+         "es6",
+         "dom.iterable",
+         "scripthost"   
+        ],
+        "baseUrl": "ClientApp/src",
+        "paths": {
+           "commonRedux/*":["redux/*"],
+           "libs/*":["libs/*"],
+           "*":["*"]
+        },
+        "moduleResolution": "node"
+    },
+    "include": [
+        "./ClientApp/src/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

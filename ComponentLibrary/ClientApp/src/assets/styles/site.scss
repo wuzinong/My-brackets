@@ -1,0 +1,355 @@
+@import './normalize.css';
+// @import './page/grid.scss';
+// @import '~@fortawesome/fontawesome-svg-core/styles.css';
+
+@import './page/grid.scss';
+@import '~styles/colors.scss';
+@import '~styles/variables.scss';
+@import '~styles/mixins.scss';
+
+html,
+body {
+    font-family: 'Avenir Next', Verdana, Geneva, sans-serif;
+    height: 100%;
+    font-size: 14px;
+}
+
+p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+input {
+    outline: none;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+.nomargin {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.back-btn {
+    font-size: 14px;
+}
+
+#container {
+    height: 100%;
+
+    & > div {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .vui-header {
+        flex: 0 0 auto;
+    }
+
+    .common-middle {
+        flex: 1 0 auto;
+    }
+
+    .regist-page {
+        background-color: color(primary11);
+    }
+
+    .vui-footer {
+        flex: 0 0 auto;
+    }
+}
+
+.vui-select {
+    .vui-select__value-container {
+        padding: 5px 13px;
+    }
+
+    .vui-select__indicator {
+        padding: 4px;
+    }
+
+    .vui-select__option {
+        padding: 5px 13px;
+    }
+
+}
+
+/*common style*/
+.common-form {
+    padding-left: 20px;
+
+    .inner-form {
+        color: color(primary9);
+        padding-left: 60px;
+        font-size: 16px;
+
+        .form-area {
+            & > div {
+                margin-top: 20px;
+            }
+
+            &:last-child {
+                padding: 0;
+            }
+
+            .btnArrow-area {
+                position: relative;
+
+                svg {
+                    position: absolute;
+                    right: -20px;
+                    top: 17px;
+                }
+            }
+
+            label {
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .bottom-line {
+        border-bottom: 1px solid color(secondary10);
+    }
+
+    .bottom-line-dark {
+        border-bottom: 1px solid color(secondary11);
+    }
+
+    .mt-20 {
+        margin-top: 20px;
+    }
+
+    .error-info {
+        color: red;
+    }
+}
+
+.form-back {
+    svg {
+        color: color(cyan-dark);
+        margin-right: 5px;
+    }
+}
+
+.Language {
+    margin: 20px 0;
+}
+
+.toast-area {
+    z-index: 99999;
+}
+
+.common-mark{
+   width:24px;
+   height:24px;
+   border-radius: 50%;
+   position: relative;
+   background-color:color(secondary18);
+   margin-top:-5px;
+}
+.common-mark-right{
+  &::before{
+    content:'';
+    height: 7px;
+    width:13px;
+    display: inline-block;
+    border-left:1px solid white;
+    border-bottom:1px solid white;
+    transform: rotate(-45deg);
+    top: 7px;
+    left: 6px;
+    position: absolute;
+  }
+}
+.common-mark-right-back{
+    background-color:color(primary22);
+}
+.common-mark-wrong{
+    &::before{
+      content:'';
+      height: 14px;
+      width:1px;
+      background-color:white;
+      transform: rotate(45deg);
+      position: absolute;
+      left: 11px;
+      top: 6px;
+    }
+    &::after{
+        content:'';
+        height: 14px;
+        width:1px;
+        background-color:white;
+        transform: rotate(-45deg);
+        position: absolute;
+        left: 11px;
+        top: 6px;
+      }
+  }
+
+.common-mark-wrong-back{
+    background-color:color(primary23);
+}
+
+.common-success-mark {
+    width: 53px;
+    height: 25px;
+    border-left: 3px solid color(cyan-dark);
+    border-bottom: 3px solid color(cyan-dark);
+    transform: rotate(-45deg);
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.common-modal {
+    max-width: 450px;
+    margin: 0 auto;
+    background-color: white;
+
+    .change-email-modal {
+        .nav-back-profile {
+            display: none;
+        }
+
+        color: color(primary9);
+
+        h2 {
+            font-size: 22px;
+            font-weight: 500;
+            margin: 0;
+            margin-bottom: 28px;
+        }
+
+        .form-area {
+            margin-bottom: 28px;
+        }
+
+        .form-area:last-child {
+            margin-bottom: auto;
+        }
+    }
+    .email-btn-section{
+        margin-top:30px;
+    }
+    .change-succeed-modal {
+        color: color(primary9);
+        text-align: center;
+
+        h3 {
+            margin: 0 auto;
+            width: 80%;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin: 0 auto;
+            width: 60%;
+        }
+    }
+
+    .sending-email-modal {
+        text-align: left;
+        color: color(secondary16);
+
+        .email-title {
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .email-content {
+            margin: 25px 0 20px;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.38;
+        }
+    }
+}
+
+@include maxSize($screen_lg) {
+    .common-form {
+        .inner-form {
+            padding-left: 0;
+        }
+    }
+
+    .pathplan-bg {
+        background-image: none;
+    }
+}
+
+@include maxSize($screen_md) {
+    .common-form {
+        padding-left: 0;
+    }
+}
+
+@include maxSize($screen_sm) {
+    // .change-email-overlay{
+    //  margin-top:70px;
+    //  z-index:3;
+    .common-form {
+        .inner-form {
+            .form-area {
+                padding: 0;
+            }
+        }
+    }
+
+    .change-email-modal {
+        padding: 15px 0;
+
+        .nav-back-profile {
+            display: block;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: normal;
+            color: color(cyan-dark);
+            padding-bottom: 20px;
+            border-bottom: 1px solid color(secondary11);
+        }
+
+        .form-area {
+            margin-bottom: 65px;
+
+            .vui-button {
+                padding: 6px 12px;
+                font-size: 14px;
+                min-height: auto;
+            }
+        }
+    }
+    // }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 112, 177, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 112, 177, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 112, 177, 0);
+    }
+}
