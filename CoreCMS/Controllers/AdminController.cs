@@ -17,6 +17,8 @@ namespace CoreCMS.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+
+
             return View();
         }
 
@@ -48,16 +50,10 @@ namespace CoreCMS.Controllers
                 //var principal = new ClaimsPrincipal(new[] { claimsIdentity });
                 //Thread.CurrentPrincipal = principal;
                 //HttpContext.Current.User = principal;
-
-                if (string.IsNullOrEmpty(returnUrl))
-                {
-                    return Content("0");
-                }
-
                 return Content("1");
             }
 
-           return Content("2");
+           return Content("0");
         }
 
         [Route("secret/[controller]/logout")]

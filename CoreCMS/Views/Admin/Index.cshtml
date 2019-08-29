@@ -20,10 +20,10 @@
 </head>
 
 <body>
-    <div>sdfsdf</div>
+    <div>Login</div>
     <form id="form" action="/" method="post">
         <input type="text" name="userName" value="" />
-        <input type="text" name="password" value="" />
+        <input type="password" name="password" value="" />
 
     </form>
     <button id="btn">Commit</button>
@@ -35,7 +35,11 @@
                 var form = $("#form").serialize();
                 console.log(form);
                 $.post("/secret/admin/login",form, function (data) {
-                    alert(data);
+                    if (data == "1") {
+                        window.location.href = "/secret/admin/list"
+                    } else {
+                        alert("Wrong username or password")
+                    }
                 })
             });
 
