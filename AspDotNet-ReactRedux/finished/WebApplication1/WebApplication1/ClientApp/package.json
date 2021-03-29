@@ -47,7 +47,7 @@
     "react": "^16.4.1",
     "react-async-component": "^2.0.0",
     "react-bootstrap": "^0.31.5",
-    "react-dev-utils": "^4.2.1",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "^16.4.1",
     "react-loadable": "^5.4.0",
     "react-redux": "^5.0.5",
