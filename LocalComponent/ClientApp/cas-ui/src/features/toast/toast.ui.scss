@@ -1,0 +1,24 @@
+:local {
+	.toasts {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+
+		position: fixed;
+		z-index: 9999;
+		top: 16px;
+		bottom: 0;
+		left: 16px;
+		right: 16px;
+		pointer-events: none;
+
+		margin: 0;
+		padding: 0;
+
+		.toast {
+			pointer-events: initial;
+			margin-bottom: 16px;
+			max-width: 600px;
+		}
+	}
+}

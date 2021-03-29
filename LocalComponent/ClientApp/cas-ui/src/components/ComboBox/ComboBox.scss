@@ -1,0 +1,93 @@
+@import 'src/styles/shared/colors.scss';
+
+:local {
+	@mixin input-border($border-color, $border-color-focus) {
+		border: none;
+		box-shadow: 0 0 0 1px $border-color;
+
+		&:focus {
+			box-shadow: 0 0 0 2px $border-color-focus;
+		}
+	}
+
+	.ComboBoxContainer {
+		position: relative;
+	}
+
+	.ComboBox {
+		-webkit-appearance: none;
+		display: block;
+		width: 100%;
+		font-family: 'Avenir Next', sans-serif;
+		font-size: 16px;
+		padding: 7px 12px;
+		margin-bottom: 8px;
+		border-radius: 5px;
+
+		&[data-nospacing] {
+			margin: 0;
+		}
+
+		@include input-border(color(slateGrey80), color(digitalBlue80));
+		&[data-state='invalid'] {
+			@include input-border(color(coral80), color(coral80));
+		}
+		&[data-state='validated'] {
+			@include input-border(color(landGreen80), color(landGreen80));
+		}
+
+		&:disabled {
+			color: color(prussian80);
+			background-color: color(slateGrey20);
+			box-shadow: 0 0 0 1px color(slateGrey80);
+		}
+	}
+
+	.ComboBoxToggle {
+		appearance: none;
+		position: absolute;
+		right: 5px;
+		top: 50%;
+		border: 0;
+		padding: 0;
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 14px 9px;
+		background-image: url('../../../../src/images/down-arrow.svg');
+		width: 30px;
+		height: 30px;
+		margin-top: -15px;
+
+		&:disabled {
+			filter: grayscale(1);
+		}
+	}
+
+	.ComboBoxPopover {
+		display: none;
+		overflow: auto;
+		z-index: 1;
+		background-color: color(white);
+		position: absolute;
+		top: calc(100% + 6px);
+		left: 0;
+		width: 100%;
+		padding: 7px 0;
+		margin-bottom: 8px;
+		border-radius: 5px;
+		box-shadow: 0 0 0 1px color(digitalBlue80);
+		max-height: 285px;
+	}
+	.ComboBoxPopoverOpen {
+		display: block;
+	}
+
+	.ComboBoxItem {
+		padding: 0 12px;
+	}
+
+	.ComboBoxItem[disabled] {
+		color: lightgray;
+	}
+}

@@ -1,0 +1,288 @@
+@import 'src/styles/shared/colors.scss';
+
+
+
+@mixin cas-h1 {
+	font-family: 'Avenir Next', sans-serif;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 44px;
+}
+
+@mixin cas-h2 {
+	font-family: 'Avenir Next', sans-serif;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 33px;
+}
+
+@mixin cas-h3 {
+	font-family: 'Avenir Next', sans-serif;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 27px;
+}
+
+@mixin cas-h4 {
+	font-family: 'Avenir Next', sans-serif;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 25px;
+}
+
+@mixin cas-h5 {
+	font-family: 'Avenir Next', sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 22px;
+}
+
+@mixin cas-h6 {
+	font-family: 'Avenir Next', sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 22px;
+	color: #b3b3b3;
+}
+
+@mixin cas-a {
+	color: color(digitalBlue80);
+	text-decoration: underline;
+	cursor: pointer;
+
+	// remove button styles (so it can be applied to make a button look like a link)
+	border: none;
+	background: none;
+	padding: 0;
+
+	&:hover {
+		color: color(prussian80);
+		background-color: color(digitalBlue20);
+	}
+}
+
+@mixin cas-a-normal {
+	color: color(digitalBlue80);
+	text-decoration: none;
+	cursor: pointer;
+
+	// remove button styles (so it can be applied to make a button look like a link)
+	border: none;
+	background: none;
+	padding: 0;
+
+	&:hover {
+		color: color(prussian80);
+		background-color: color(digitalBlue20);
+	}
+}
+
+@mixin cas-ul {
+	list-style-type: disc;
+	list-style-position: inside;
+
+	li {
+		margin-left: 16px;
+	}
+}
+
+@mixin cas-ol {
+	list-style-type: lower-latin;
+	list-style-position: inside;
+
+	li {
+		margin-left: 16px;
+	}
+}
+
+@mixin cas-pre {
+	font-family: 'Courier New', monospace;
+	font-size: 16px;
+	font-weight: 600;
+	color: color(digitalBlue80);
+	background-color: #eff7fa;
+	padding: 8px;
+}
+
+@mixin cas-strong {
+	font-weight: 600;
+}
+
+@mixin cas-em {
+	font-style: italic;
+}
+
+@mixin cas-small {
+	font-size: 14px;
+}
+
+@mixin cas-code {
+	padding: 0 4px;
+	color: color(digitalBlue80);
+	background-color: #eff7fa;
+	font-family: monospace;
+	font-weight: 400;
+}
+
+@mixin cas-sup {
+	vertical-align: sup;
+	font-size: 50%;
+}
+
+@mixin cas-sub {
+	vertical-align: sub;
+	font-size: 50%;
+}
+
+@mixin cas-table {
+	width: 100%;
+
+	thead {
+		border-bottom: 1px solid color(slateGrey40);
+	}
+	th {
+		font-weight: 600;
+	}
+	th,
+	td {
+		text-align: left;
+		padding: 8px;
+	}
+}
+
+:global {
+	body {
+		font-family: 'Avenir Next', Verdana, Geneva, sans-serif;
+		color: color(prussian80);
+		font-size: 16px;
+		line-height: 1.5;
+	}
+
+	// Styles applied on elements directly (only for certain tags)
+	strong {
+		@include cas-strong;
+	}
+	em {
+		@include cas-em;
+	}
+	sup {
+		@include cas-sup;
+	}
+	sub {
+		@include cas-sub;
+	}
+
+	// Classes for manual styling of elements
+	.cas-h1 {
+		@include cas-h1;
+	}
+	.cas-h2 {
+		@include cas-h2;
+	}
+	.cas-h3 {
+		@include cas-h3;
+	}
+	.cas-h4 {
+		@include cas-h4;
+	}
+	.cas-h5 {
+		@include cas-h5;
+	}
+	.cas-h6 {
+		@include cas-h6;
+	}
+	.cas-a {
+		@include cas-a;
+	}
+	.cas-a-normal {
+		@include cas-a-normal;
+	}
+	.cas-ul {
+		@include cas-ul;
+	}
+	.cas-ol {
+		@include cas-ol;
+	}
+	.cas-pre {
+		@include cas-pre;
+	}
+	.cas-small {
+		@include cas-small;
+	}
+	.cas-code {
+		@include cas-code;
+	}
+	.cas-table {
+		@include cas-table;
+	}
+
+	// "Autostyled" class that makes its children style themselves. Practical for styling WYSIWYG content, etc.
+	// Also applies spacing.
+	.cas-autostyled {
+		h1 {
+			@include cas-h1;
+		}
+		h2 {
+			@include cas-h2;
+		}
+		h3 {
+			@include cas-h3;
+		}
+		h4 {
+			@include cas-h4;
+		}
+		h5 {
+			@include cas-h5;
+		}
+		h6 {
+			@include cas-h6;
+		}
+		a {
+			@include cas-a;
+		}
+		ul {
+			@include cas-ul;
+		}
+		ol {
+			@include cas-ol;
+		}
+		pre {
+			@include cas-pre;
+		}
+		small {
+			@include cas-small;
+		}
+		code {
+			@include cas-code;
+		}
+		table {
+			@include cas-table;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		ol,
+		pre {
+			margin-bottom: 16px;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin-top: 48px;
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+}

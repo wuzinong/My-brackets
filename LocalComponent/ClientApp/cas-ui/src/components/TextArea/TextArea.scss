@@ -1,0 +1,41 @@
+@import 'src/styles/shared/colors.scss';
+
+:local {
+	@mixin input-border($border-color, $border-color-focus) {
+		border: none;
+		box-shadow: 0 0 0 1px $border-color;
+
+		&:focus {
+			box-shadow: 0 0 0 2px $border-color-focus;
+		}
+	}
+
+	.TextArea {
+		display: block;
+		width: 100%;
+		font-family: 'Avenir Next', sans-serif;
+		font-size: 16px;
+		padding: 7px 12px;
+		margin-bottom: 8px;
+		border-radius: 5px;
+		outline: none;
+
+		&[data-nospacing] {
+			margin: 0;
+		}
+
+		@include input-border(color(slateGrey80), color(digitalBlue80));
+		&[data-state='invalid'] {
+			@include input-border(#d6393f, #d6393f);
+		}
+		&[data-state='validated'] {
+			@include input-border(color(landGreen80), color(landGreen80));
+		}
+
+		&:disabled {
+			color: color(prussian80);
+			background-color: color(slateGrey20);
+			box-shadow: 0 0 0 1px color(slateGrey80);
+		}
+	}
+}

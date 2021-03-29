@@ -1,0 +1,33 @@
+@import 'src/styles/shared/colors.scss';
+
+$background-color: color(prussian80);
+$text-color: white;
+
+:global {
+	.react-tooltip-lite {
+		padding: 14px 20px !important;
+		max-width: 400px !important;
+		background-color: $background-color;
+		border-radius: 6px;
+		color: $text-color;
+		font-size: 16px;
+		line-height: 1.6;
+		font-family: 'Avenir Next', sans-serif;
+
+		a {
+			text-decoration: underline;
+			color: color(digitalBlue40);
+			&:hover {
+				background: none;
+			}
+		}
+
+		strong {
+			font-weight: 600;
+		}
+	}
+
+	.react-tooltip-lite-arrow {
+		border-color: $background-color;
+	}
+}

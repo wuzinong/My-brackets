@@ -1,0 +1,43 @@
+@import 'src/styles/shared/colors.scss';
+
+:local {
+	.radioButtonGroup {
+		display: flex;
+		flex-direction: column;
+		&[data-layout='horizontal'] {
+			flex-direction: row;
+		}
+
+		.radioButton {
+			box-sizing: border-box;
+			font-family: 'Avenir Next', sans-serif;
+			font-size: 16px;
+
+			position: relative;
+			margin-right: 16px;
+
+			input {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 0px;
+				height: 0px;
+				opacity: 0;
+			}
+
+			&[data-checked='true'] {
+				[data-variant='blue']{
+					background-color: color(prussian80);
+					color:#fff;
+				}
+			}
+
+			&[data-disabled='true'] {
+				[data-variant='blue']{
+					background-color: #b3b3b3;
+					color:#fff;
+				}
+			}
+		}
+	}
+}

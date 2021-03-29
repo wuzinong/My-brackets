@@ -1,0 +1,80 @@
+@import 'src/styles/shared/colors.scss';
+
+:local {
+	.Text {
+		margin-bottom: 16px;
+		font-family: 'Avenir Next', sans-serif;
+
+		&[data-look='HEADING1'] {
+			font-size: 32px;
+			font-weight: 600;
+		}
+
+		&[data-look='HEADING2'] {
+			font-size: 24px;
+			font-weight: 600;
+		}
+
+		&[data-look='HEADING3'] {
+			font-size: 20px;
+			font-weight: 600;
+		}
+
+		&[data-look='HEADING4'] {
+			font-size: 18px;
+			font-weight: 600;
+		}
+
+		&[data-look='HEADING5'] {
+			font-size: 16px;
+			font-weight: 600;
+		}
+
+		&[data-look='HEADING6'] {
+			font-size: 16px;
+			font-weight: 600;
+			color: #b3b3b3;
+		}
+
+		&[data-look='BODY'] {
+			font-size: 16px;
+			font-weight: 400;
+		}
+
+		&[data-look='SMALL'] {
+			font-size: 14px;
+		}
+
+		&[data-look='PREAMBLE_MEDIUM'] {
+			font-size: 20px;
+			font-weight: 'normal';
+		}
+
+		&[data-look='PREAMBLE_LARGE'] {
+			font-size: 24px;
+			font-weight: 'normal';
+		}
+
+		&[data-look='CAPTION'] {
+			font-style: italic;
+			font-weight: 600;
+			font-size: 16px;
+			color: #b3b3b3;
+		}
+
+		&[data-look='LABEL'] {
+			font-weight: 600;
+			font-size: 16px;
+			letter-spacing: -0.2px;
+		}
+
+		&[data-look='LABEL_SMALL'] {
+			font-style: normal;
+			font-weight: 600;
+			font-size: 14px;
+			letter-spacing: -0.2px;
+			text-transform: uppercase;
+			color: color(slateGrey60);
+		}
+	}
+}

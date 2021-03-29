@@ -1,0 +1,103 @@
+@import 'src/styles/shared/colors.scss';
+
+:local {
+	@mixin input-border($border-color, $border-color-focus) {
+		border: none;
+		box-shadow: 0 0 0 1px $border-color;
+
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 0 2px $border-color-focus;
+		}
+	}
+
+	.SelectContainer {
+		position: relative;
+		margin-bottom: 8px;
+		font-weight: 400;
+		font-size: 16px;
+
+		&[data-nospacing] {
+			margin: 0;
+		}
+
+		&[data-state='invalid'] .SelectToggle {
+			@include input-border(color(coral80), color(coral80));
+		}
+		&[data-state='validated'] .SelectToggle {
+			@include input-border(color(landGreen80), color(landGreen80));
+		}
+
+		&[data-size='small'] .SelectToggle {
+			line-height: 1;
+			padding: 5px 34px 5px 10px;
+			height: 32px;
+			background-position: right 10px top 13px;
+		}
+
+		&[data-size='small'] .SelectItem {
+			padding: 0 10px;
+		}
+	}
+
+	.SelectToggle {
+		text-align: left;
+		display: block;
+		width: 100%;
+		font-family: 'Avenir Next', sans-serif;
+		font-size: 16px;
+		padding: 7px 40px 7px 12px;
+		border-radius: 5px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+
+		@include input-border(color(slateGrey80), color(digitalBlue80));
+
+		&:disabled {
+			color: color(prussian80);
+			background-color: color(slateGrey20);
+			box-shadow: 0 0 0 1px color(slateGrey80);
+			filter: grayscale(1);
+		}
+
+		appearance: none;
+		background-color: white;
+		background-repeat: no-repeat;
+		background-position: right 14px top 50%;
+		background-size: 14px 9px;
+		background-image: url('../../../../src/images/down-arrow.svg');
+		height: 38px;
+	}
+
+	.SelectPopover {
+		display: none;
+		overflow: auto;
+		z-index: 1;
+		background-color: color(white);
+		position: absolute;
+		top: calc(100% + 6px);
+		left: 0;
+		width: 100%;
+		padding: 7px 0;
+		margin-bottom: 8px;
+		border-radius: 5px;
+		box-shadow: 0 0 0 1px color(digitalBlue80);
+		max-height: 285px;
+
+		&:focus {
+			outline: none;
+		}
+	}
+	.SelectPopoverOpen {
+		display: block;
+	}
+
+	.SelectItem {
+		padding: 0 12px;
+	}
+
+	.SelectItem[disabled] {
+		color: lightgray;
+	}
+}
